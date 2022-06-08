@@ -73,7 +73,7 @@ flutter:
     # Dashboard
     - assets/icon/
     - assets/icon/providers/
-    - assets/icon/providers/dashboard/
+    - assets/icon/dashboard/
     - assets/icon/providers/local/
     - assets/icon/providers/inter/
   

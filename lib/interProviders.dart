@@ -88,7 +88,7 @@ class _InterProvidersState extends State<InterProviders> {
                   Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => Dashboard(),
+                      builder: (context) => const Dashboard(),
                     ),
                   );
                 },
@@ -128,7 +128,7 @@ class _InterProvidersState extends State<InterProviders> {
           width: 41.h,
           height: 20.h,
           decoration: BoxDecoration(
-            color: Color(0xffd9d9d9),
+            color: const Color(0xffd9d9d9),
             borderRadius: BorderRadius.circular(30),
           ),
         ),

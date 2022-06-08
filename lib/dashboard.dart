@@ -2,6 +2,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:prosthesis/interProviders.dart';
 import 'package:prosthesis/localProviders.dart';
+import 'package:prosthesis/prosthesisInfo.dart';
 import 'package:prosthesis/theme.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:intl/intl.dart';
@@ -138,15 +139,21 @@ class _DashboardState extends State<Dashboard> {
                   return Builder(
                     builder: (BuildContext context) {
                       return Container(
-                          width: MediaQuery.of(context).size.width,
-                          // margin: const EdgeInsets.symmetric(horizontal: 5.0),
-                          decoration: const BoxDecoration(
-                            color: Color(0xFFF0F0F0),
+                        width: MediaQuery.of(context).size.width,
+
+                        // margin: const EdgeInsets.symmetric(horizontal: 5.0),
+                        decoration: const BoxDecoration(
+                          image: DecorationImage(
+                            image:
+                                AssetImage('assets/icon/dashboard/slider.png'),
                           ),
-                          child: Text(
-                            'text $i',
-                            style: const TextStyle(fontSize: 16.0),
-                          ));
+                          color: Color(0xFFF0F0F0),
+                        ),
+                        // child: Text(
+                        //   'text $i',
+                        //   style: const TextStyle(fontSize: 16.0),
+                        // )
+                      );
                     },
                   );
                 }).toList(),
@@ -210,23 +217,23 @@ class _DashboardState extends State<Dashboard> {
                   menus(
                       image: "assets/icon/dashboard/Paper.svg",
                       menuTitle: "Prosthesis\nInformation",
-                      widget: localProviders()),
+                      widget: const ProsthesisInfo()),
                   const Spacer(),
                   menus(
                     image: "assets/icon/dashboard/Call.svg",
                     menuTitle: "Local\nProviders",
-                    widget: localProviders(),
+                    widget: const localProviders(),
                   ),
                   const Spacer(),
                   menus(
                       image: "assets/icon/dashboard/Calling.svg",
                       menuTitle: "International\nProviders",
-                      widget: interProviders()),
+                      widget: const interProviders()),
                   const Spacer(),
                   menus(
                       image: "assets/icon/dashboard/Heart.svg",
                       menuTitle: "Prosthesis\nRehabilitation",
-                      widget: LocalProviders()),
+                      widget: const LocalProviders()),
                 ],
               ),
               Row(
