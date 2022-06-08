@@ -4,7 +4,7 @@ import 'package:prosthesis/theme.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:intl/intl.dart';
 
-String name = 'Doel';
+String name = 'Tia';
 
 void main() {
   runApp(const Dashboard());
@@ -130,7 +130,9 @@ class _DashboardState extends State<Dashboard> {
                       return Container(
                           width: MediaQuery.of(context).size.width,
                           // margin: const EdgeInsets.symmetric(horizontal: 5.0),
-                          decoration: const BoxDecoration(color: Colors.amber),
+                          decoration: const BoxDecoration(
+                            color: Color(0xFFF0F0F0),
+                          ),
                           child: Text(
                             'text $i',
                             style: const TextStyle(fontSize: 16.0),
@@ -142,21 +144,29 @@ class _DashboardState extends State<Dashboard> {
               const SizedBox(
                 height: 20,
               ),
-              SizedBox(
-                height: 64,
-                child: TextField(
-                  maxLines: 1,
-                  style: blacktTextStyle.copyWith(fontSize: 16),
-                  textAlignVertical: TextAlignVertical.center,
-                  decoration: InputDecoration(
-                      isDense: true,
-                      filled: true,
-                      prefixIcon: SvgPicture.asset(
-                        "assets/icon/dashboard/Search.svg",
-                        color: blackcolor,
-                        width: 5,
-                        height: 5,
-                        fit: BoxFit.scaleDown,
+              Container(
+                padding: const EdgeInsets.symmetric(horizontal: 10),
+                height: 66,
+                decoration: BoxDecoration(
+                  color: const Color(0xFFF0F0F0),
+                  borderRadius: BorderRadius.circular(25),
+                ),
+                child: Center(
+                  child: TextField(
+                    maxLines: 1,
+                    style: blacktTextStyle.copyWith(fontSize: 20),
+                    textAlignVertical: TextAlignVertical.center,
+                    decoration: InputDecoration(
+                      filled: false,
+                      prefixIcon: Padding(
+                        padding: const EdgeInsets.all(10),
+                        child: SvgPicture.asset(
+                          "assets/icon/dashboard/Search.svg",
+                          color: const Color.fromRGBO(54, 60, 60, 0.5),
+                          // width: 8,
+                          // height: 8,
+                          // fit: BoxFit.fitWidth,
+                        ),
                       ),
                       border: const OutlineInputBorder(
                         borderSide: BorderSide.none,
@@ -169,7 +179,10 @@ class _DashboardState extends State<Dashboard> {
                       contentPadding: EdgeInsets.zero,
                       hintText: 'Search anything here',
                       hintStyle: blacktTextStyle.copyWith(
-                          color: const Color.fromRGBO(54, 60, 60, 0.5))),
+                        color: const Color.fromRGBO(54, 60, 60, 0.5),
+                      ),
+                    ),
+                  ),
                 ),
               ),
               Text(
