@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:prosthesis/dashboard.dart';
+import 'package:sizer/sizer.dart';
 // import 'package:google_fonts/google_fonts.dart';
 
 void main() {
@@ -11,9 +12,11 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Dashboard(),
-    );
+    return Sizer(builder: (context, orientation, deviceType) {
+      return const MaterialApp(
+        debugShowCheckedModeBanner: false,
+        home: Dashboard(),
+      );
+    });
   }
 }

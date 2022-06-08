@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:prosthesis/dashboard.dart';
 import 'package:sizer/sizer.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 void main() {
-  runApp(const Prosthesis(
-      // home: localproviders(),
+  runApp(const interProviders(
+      // home: InterProviders(),
       ));
 }
 
-class Prosthesis extends StatelessWidget {
-  const Prosthesis({Key? key}) : super(key: key);
+class interProviders extends StatelessWidget {
+  const interProviders({Key? key}) : super(key: key);
 
   // This widget is the root of your application.
   @override
@@ -18,7 +19,7 @@ class Prosthesis extends StatelessWidget {
       return MaterialApp(
         theme: ThemeData(fontFamily: 'Nunito'),
         home: const Scaffold(
-          body: LocalProviders(),
+          body: InterProviders(),
         ),
       );
     });
@@ -27,47 +28,47 @@ class Prosthesis extends StatelessWidget {
 
 List<Map<String, String>> doctor = [
   {
-    'image': 'assets/images/p11.png',
-    'name': 'Dr. Suparjo',
+    'image': 'assets/icon/providers/inter/p21.png',
+    'name': 'Dr. Sacha',
     'subtitle': 'subtitle',
     'special': 'Top Speciality Extrimity',
-    'loc': 'Mojoroto (1.2 km)',
-    'icon': 'assets/images/right1.svg',
+    'loc': 'Sidney Hospital',
+    'icon': 'assets/icon/providers/right1.svg',
   },
   {
-    'image': 'assets/images/p12.png',
-    'name': 'Dr. Ammar',
+    'image': 'assets/icon/providers/inter/p22.png',
+    'name': 'Dr. Johanson',
     'subtitle': 'subtitle',
     'special': 'Bottom Speciality Extrimity',
-    'loc': 'Gambiran (3.2 km)',
-    'icon': 'assets/images/right1.svg',
+    'loc': 'Singapore Hospital',
+    'icon': 'assets/icon/providers/right1.svg',
   },
   {
-    'image': 'assets/images/p13.png',
-    'name': 'Dr. Nathalia',
+    'image': 'assets/icon/providers/inter/p23.png',
+    'name': 'Dr. Christ A',
     'subtitle': 'subtitle',
     'special': 'Top & Bottom Extrimity',
-    'loc': 'Kilisuci (4.2 km)',
-    'icon': 'assets/images/right1.svg',
+    'loc': 'Amerika Hospital',
+    'icon': 'assets/icon/providers/right1.svg',
   },
   {
-    'image': 'assets/images/p14.png',
-    'name': 'Dr. Joya',
+    'image': 'assets/icon/providers/inter/p24.png',
+    'name': 'Dr. Joe',
     'subtitle': 'subtitle',
     'special': 'Bottom Speciality Extrimity',
-    'loc': 'Bhayangkara (5.2 km)',
-    'icon': 'assets/images/right1.svg',
+    'loc': 'Zimbabwe Hospital',
+    'icon': 'assets/icon/providers/right1.svg',
   }
 ];
 
-class LocalProviders extends StatefulWidget {
-  const LocalProviders({Key? key}) : super(key: key);
+class InterProviders extends StatefulWidget {
+  const InterProviders({Key? key}) : super(key: key);
 
   @override
-  State<LocalProviders> createState() => _LocalProvidersState();
+  State<InterProviders> createState() => _InterProvidersState();
 }
 
-class _LocalProvidersState extends State<LocalProviders> {
+class _InterProvidersState extends State<InterProviders> {
   final padding = const EdgeInsets.symmetric(horizontal: 20);
 
   @override
@@ -82,16 +83,26 @@ class _LocalProvidersState extends State<LocalProviders> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              SizedBox(
-                width: 3.5.h,
-                height: 3.5.h,
-                child: SvgPicture.asset(
-                  'assets/images/left.svg',
+              InkWell(
+                onTap: () {
+                  Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => Dashboard(),
+                    ),
+                  );
+                },
+                child: SizedBox(
+                  width: 3.5.h,
+                  height: 3.5.h,
+                  child: SvgPicture.asset(
+                    'assets/icon/providers/left.svg',
+                  ),
                 ),
               ),
               const Spacer(),
               Text(
-                'Local Providers',
+                'International Providers',
                 style: TextStyle(
                   color: const Color(0xff363C3C),
                   fontSize: 15.sp,
@@ -103,7 +114,7 @@ class _LocalProvidersState extends State<LocalProviders> {
                 width: 3.5.h,
                 height: 3.5.h,
                 child: SvgPicture.asset(
-                  'assets/images/filter.svg',
+                  'assets/icon/providers/filter.svg',
                 ),
               ),
             ],
@@ -130,7 +141,7 @@ class _LocalProvidersState extends State<LocalProviders> {
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               Text(
-                'Local service provider',
+                'International service provider',
                 style: TextStyle(
                   fontWeight: FontWeight.w700,
                   fontSize: 15.sp,

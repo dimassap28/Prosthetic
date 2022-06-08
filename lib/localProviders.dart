@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:prosthesis/dashboard.dart';
 import 'package:sizer/sizer.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 void main() {
-  runApp(const Prosthesis(
+  runApp(const localProviders(
       // home: localproviders(),
       ));
 }
 
-class Prosthesis extends StatelessWidget {
-  const Prosthesis({Key? key}) : super(key: key);
+class localProviders extends StatelessWidget {
+  const localProviders({Key? key}) : super(key: key);
 
   // This widget is the root of your application.
   @override
@@ -27,36 +28,36 @@ class Prosthesis extends StatelessWidget {
 
 List<Map<String, String>> doctor = [
   {
-    'image': 'assets/images/p11.png',
+    'image': 'assets/icon/providers/local/p11.png',
     'name': 'Dr. Suparjo',
     'subtitle': 'subtitle',
     'special': 'Top Speciality Extrimity',
     'loc': 'Mojoroto (1.2 km)',
-    'icon': 'assets/images/right1.svg',
+    'icon': 'assets/icon/providers/right1.svg',
   },
   {
-    'image': 'assets/images/p12.png',
+    'image': 'assets/icon/providers/local/p12.png',
     'name': 'Dr. Ammar',
     'subtitle': 'subtitle',
     'special': 'Bottom Speciality Extrimity',
     'loc': 'Gambiran (3.2 km)',
-    'icon': 'assets/images/right1.svg',
+    'icon': 'assets/icon/providers/right1.svg',
   },
   {
-    'image': 'assets/images/p13.png',
+    'image': 'assets/icon/providers/local/p13.png',
     'name': 'Dr. Nathalia',
     'subtitle': 'subtitle',
     'special': 'Top & Bottom Extrimity',
     'loc': 'Kilisuci (4.2 km)',
-    'icon': 'assets/images/right1.svg',
+    'icon': 'assets/icon/providers/right1.svg',
   },
   {
-    'image': 'assets/images/p14.png',
+    'image': 'assets/icon/providers/local/p14.png',
     'name': 'Dr. Joya',
     'subtitle': 'subtitle',
     'special': 'Bottom Speciality Extrimity',
     'loc': 'Bhayangkara (5.2 km)',
-    'icon': 'assets/images/right1.svg',
+    'icon': 'assets/icon/providers/right1.svg',
   }
 ];
 
@@ -82,11 +83,21 @@ class _LocalProvidersState extends State<LocalProviders> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              SizedBox(
-                width: 3.5.h,
-                height: 3.5.h,
-                child: SvgPicture.asset(
-                  'assets/images/left.svg',
+              InkWell(
+                onTap: () {
+                  Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => Dashboard(),
+                    ),
+                  );
+                },
+                child: SizedBox(
+                  width: 3.5.h,
+                  height: 3.5.h,
+                  child: SvgPicture.asset(
+                    'assets/icon/providers/left.svg',
+                  ),
                 ),
               ),
               const Spacer(),
@@ -103,7 +114,7 @@ class _LocalProvidersState extends State<LocalProviders> {
                 width: 3.5.h,
                 height: 3.5.h,
                 child: SvgPicture.asset(
-                  'assets/images/filter.svg',
+                  'assets/icon/providers/filter.svg',
                 ),
               ),
             ],

@@ -1,8 +1,11 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:prosthesis/interProviders.dart';
+import 'package:prosthesis/localProviders.dart';
 import 'package:prosthesis/theme.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:intl/intl.dart';
+import 'package:sizer/sizer.dart';
 
 String name = 'Tia';
 
@@ -25,24 +28,31 @@ class _DashboardState extends State<Dashboard> {
   Widget menus({
     required String image,
     required String menuTitle,
+    required Widget widget,
   }) {
     return Column(
       children: [
-        Container(
-          margin: const EdgeInsets.symmetric(vertical: 10),
-          padding: const EdgeInsets.all(24),
-          width: 80,
-          height: 80,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(24),
-            border: Border.all(
-              width: 1,
-              color: graycolor,
+        InkWell(
+          onTap: () {
+            Navigator.pushReplacement(
+                context, MaterialPageRoute(builder: (context) => widget));
+          },
+          child: Container(
+            margin: const EdgeInsets.symmetric(vertical: 10),
+            padding: const EdgeInsets.all(24),
+            width: 80,
+            height: 80,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(24),
+              border: Border.all(
+                width: 1,
+                color: graycolor,
+              ),
             ),
-          ),
-          child: SvgPicture.asset(
-            image,
-            color: orangecolor,
+            child: SvgPicture.asset(
+              image,
+              color: orangecolor,
+            ),
           ),
         ),
         Text(
@@ -106,11 +116,11 @@ class _DashboardState extends State<Dashboard> {
                     ],
                   ),
                   const Spacer(),
-                  Image.asset(
-                    "assets/icon/dashboard/profile.png",
-                    height: 60,
-                    fit: BoxFit.cover,
-                  )
+                  // Image.asset(
+                  //   "assets/icon/dashboard/profile.png",
+                  //   height: 60,
+                  //   fit: BoxFit.cover,
+                  // )
                 ],
               ),
               const SizedBox(
@@ -198,23 +208,25 @@ class _DashboardState extends State<Dashboard> {
               Row(
                 children: [
                   menus(
-                    image: "assets/icon/dashboard/Paper.svg",
-                    menuTitle: "Prosthesis\nInformation",
-                  ),
+                      image: "assets/icon/dashboard/Paper.svg",
+                      menuTitle: "Prosthesis\nInformation",
+                      widget: localProviders()),
                   const Spacer(),
                   menus(
                     image: "assets/icon/dashboard/Call.svg",
                     menuTitle: "Local\nProviders",
+                    widget: localProviders(),
                   ),
                   const Spacer(),
                   menus(
-                    image: "assets/icon/dashboard/Calling.svg",
-                    menuTitle: "International\nProviders",
-                  ),
+                      image: "assets/icon/dashboard/Calling.svg",
+                      menuTitle: "International\nProviders",
+                      widget: interProviders()),
                   const Spacer(),
                   menus(
                       image: "assets/icon/dashboard/Heart.svg",
-                      menuTitle: "Prosthesis\nRehabilitation")
+                      menuTitle: "Prosthesis\nRehabilitation",
+                      widget: LocalProviders()),
                 ],
               ),
               Row(
