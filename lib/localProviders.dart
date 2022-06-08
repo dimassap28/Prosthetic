@@ -61,7 +61,7 @@ List<Map<String, String>> doctor = [
 ];
 
 class LocalProviders extends StatefulWidget {
-  const LocalProviders({super.key});
+  const LocalProviders({Key? key}) : super(key: key);
 
   @override
   State<LocalProviders> createState() => _LocalProvidersState();

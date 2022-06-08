@@ -71,18 +71,8 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     # Dashboard
-    - assets/icon/dashboard/profile.png
-    - assets/icon/dashboard/slider.png
-
-    - assets/icon/dashboard/Search.svg
-
-    - assets/icon/dashboard/Paper.svg
-    - assets/icon/dashboard/Call.svg
-    - assets/icon/dashboard/Calling.svg
-    - assets/icon/dashboard/Heart.svg
-
-    - assets/icon/dashboard/thumbnail.png
-    - assets/icon/dashboard/thumbnail1.png
+    - assets/icon/
+  
     # - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
 

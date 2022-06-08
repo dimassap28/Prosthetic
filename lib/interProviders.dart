@@ -25,7 +25,7 @@ class Prosthesis extends StatelessWidget {
 
 List<Map<String, String>> doctor = [
   {
-    'image': 'assets/images/p11.png',
+    'image': 'assets/icon/providers/local/p11.png',
     'name': 'Dr. Suparjo',
     'subtitle': 'subtitle',
     'special': 'Top Speciality Extrimity',
@@ -33,7 +33,7 @@ List<Map<String, String>> doctor = [
     'icon': 'assets/images/right1.svg',
   },
   {
-    'image': 'assets/images/p12.png',
+    'image': 'assets/icon/providers/local/p12.png',
     'name': 'Dr. Ammar',
     'subtitle': 'subtitle',
     'special': 'Bottom Speciality Extrimity',
@@ -41,7 +41,7 @@ List<Map<String, String>> doctor = [
     'icon': 'assets/images/right1.svg',
   },
   {
-    'image': 'assets/images/p13.png',
+    'image': 'assets/icon/providers/local/p13.png',
     'name': 'Dr. Nathalia',
     'subtitle': 'subtitle',
     'special': 'Top & Bottom Extrimity',
@@ -49,7 +49,7 @@ List<Map<String, String>> doctor = [
     'icon': 'assets/images/right1.svg',
   },
   {
-    'image': 'assets/images/p14.png',
+    'image': 'assets/icon/providers/local/p14.png',
     'name': 'Dr. Joya',
     'subtitle': 'subtitle',
     'special': 'Bottom Speciality Extrimity',
@@ -59,8 +59,7 @@ List<Map<String, String>> doctor = [
 ];
 
 class localProviders extends StatefulWidget {
-  const localProviders({super.key});
-
+  const localProviders({Key? key}) : super(key: key);
   @override
   State<localProviders> createState() => _localProvidersState();
 }
