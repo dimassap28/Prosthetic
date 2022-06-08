@@ -185,6 +185,9 @@ class _DashboardState extends State<Dashboard> {
                   ),
                 ),
               ),
+              const SizedBox(
+                height: 20,
+              ),
               Text(
                 "Menus",
                 style: blacktTextStyle.copyWith(
