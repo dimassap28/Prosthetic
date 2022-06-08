@@ -3,7 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 
 // Colors
 
-Color bluecolor = const Color(0xFF63B4BA);
+Color bluecolor = const Color(0xFFFFCE78);
 Color lightbluecolor = const Color(0xFFADDCDF);
 Color ltbluecolor = const Color(0xFFE4F1F2);
 Color graycolor = const Color(0xFFDDDDDD);

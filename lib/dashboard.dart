@@ -1,6 +1,8 @@
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:prosthesis/theme.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:intl/intl.dart';
 
 String name = 'Doel';
 
@@ -8,8 +10,17 @@ void main() {
   runApp(const Dashboard());
 }
 
-class Dashboard extends StatelessWidget {
+class Dashboard extends StatefulWidget {
   const Dashboard({Key? key}) : super(key: key);
+
+  @override
+  State<Dashboard> createState() => _DashboardState();
+}
+
+class _DashboardState extends State<Dashboard> {
+  DateTime now = DateTime.now();
+
+  String printDate = DateFormat("EEEE, dd MMMM yyyy").format(DateTime.now());
 
   Widget menus({
     required String image,
@@ -18,6 +29,7 @@ class Dashboard extends StatelessWidget {
     return Column(
       children: [
         Container(
+          margin: const EdgeInsets.symmetric(vertical: 10),
           padding: const EdgeInsets.all(24),
           width: 80,
           height: 80,
@@ -35,12 +47,21 @@ class Dashboard extends StatelessWidget {
         ),
         Text(
           menuTitle,
-          style: blacktTextStyle.copyWith(fontSize: 12, fontWeight: normal),
+          style: blacktTextStyle.copyWith(fontSize: 16, fontWeight: normal),
           textAlign: TextAlign.center,
         ),
       ],
     );
   }
+
+  List slider = [
+    Image.asset(
+      "assets/icon/dashboard/slider.png",
+    ),
+    Image.asset(
+      "assets/icon/dashboard/slider.png",
+    ),
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -63,7 +84,14 @@ class Dashboard extends StatelessWidget {
                       Row(
                         children: [
                           Text(
-                            "Hello, $name!",
+                            "Hello, ",
+                            style: blacktTextStyle.copyWith(
+                              fontSize: 24,
+                              fontWeight: medium,
+                            ),
+                          ),
+                          Text(
+                            "$name!",
                             style: blacktTextStyle.copyWith(
                               fontSize: 24,
                               fontWeight: bold,
@@ -72,7 +100,7 @@ class Dashboard extends StatelessWidget {
                         ],
                       ),
                       Text(
-                        "Sunday, 28 Juni 2022",
+                        printDate,
                         style: blacktTextStyle.copyWith(fontSize: 20),
                       )
                     ],
@@ -88,10 +116,28 @@ class Dashboard extends StatelessWidget {
               const SizedBox(
                 height: 20,
               ),
-              Image.asset(
-                "assets/icon/dashboard/slider.png",
-                width: double.infinity,
-                fit: BoxFit.fitWidth,
+              // Image.asset(
+              //   "assets/icon/dashboard/slider.png",
+              //   width: double.infinity,
+              //   fit: BoxFit.fitWidth,
+              // ),
+
+              CarouselSlider(
+                options: CarouselOptions(height: 240),
+                items: slider.map((i) {
+                  return Builder(
+                    builder: (BuildContext context) {
+                      return Container(
+                          width: MediaQuery.of(context).size.width,
+                          // margin: const EdgeInsets.symmetric(horizontal: 5.0),
+                          decoration: const BoxDecoration(color: Colors.amber),
+                          child: Text(
+                            'text $i',
+                            style: const TextStyle(fontSize: 16.0),
+                          ));
+                    },
+                  );
+                }).toList(),
               ),
               const SizedBox(
                 height: 20,
@@ -103,6 +149,7 @@ class Dashboard extends StatelessWidget {
                   style: blacktTextStyle.copyWith(fontSize: 16),
                   textAlignVertical: TextAlignVertical.center,
                   decoration: InputDecoration(
+                      isDense: true,
                       filled: true,
                       prefixIcon: SvgPicture.asset(
                         "assets/icon/dashboard/Search.svg",
@@ -136,22 +183,22 @@ class Dashboard extends StatelessWidget {
                 children: [
                   menus(
                     image: "assets/icon/dashboard/Paper.svg",
-                    menuTitle: "Prosthesis Information",
+                    menuTitle: "Prosthesis\nInformation",
                   ),
                   const Spacer(),
                   menus(
                     image: "assets/icon/dashboard/Call.svg",
-                    menuTitle: "Local Providers",
+                    menuTitle: "Local\nProviders",
                   ),
                   const Spacer(),
                   menus(
-                    image: "assets/icon/dashboard/Call.svg",
-                    menuTitle: "International Providers",
+                    image: "assets/icon/dashboard/Calling.svg",
+                    menuTitle: "International\nProviders",
                   ),
                   const Spacer(),
                   menus(
                       image: "assets/icon/dashboard/Heart.svg",
-                      menuTitle: "Prosthesis Rehabilitation")
+                      menuTitle: "Prosthesis\nRehabilitation")
                 ],
               ),
               Row(
