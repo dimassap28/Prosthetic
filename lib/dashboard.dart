@@ -1,12 +1,12 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:prosthesis/interProviders.dart';
-import 'package:prosthesis/localProviders.dart';
-import 'package:prosthesis/prosthesisInfo.dart';
+import 'package:prosthesis/international_providers.dart';
+import 'package:prosthesis/local_providers.dart';
+import 'package:prosthesis/prosthesis_info.dart';
 import 'package:prosthesis/theme.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:intl/intl.dart';
-import 'package:sizer/sizer.dart';
+// import 'package:sizer/sizer.dart';
 
 String name = 'Tia';
 
