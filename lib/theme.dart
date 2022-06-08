@@ -3,7 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 
 // Colors
 
-Color bluecolor = const Color(0xFFFFCE78);
+Color orangecolor = const Color(0xFFFFCE78);
 Color lightbluecolor = const Color(0xFFADDCDF);
 Color ltbluecolor = const Color(0xFFE4F1F2);
 Color graycolor = const Color(0xFFDDDDDD);
@@ -11,7 +11,7 @@ Color blackcolor = const Color(0xFF363C3C);
 
 // TextStyle
 
-TextStyle bluetTextStyle = GoogleFonts.nunito(color: bluecolor);
+TextStyle bluetTextStyle = GoogleFonts.nunito(color: orangecolor);
 TextStyle lightblueStyle = GoogleFonts.nunito(color: lightbluecolor);
 TextStyle ltbluetTextStyle = GoogleFonts.nunito(color: ltbluecolor);
 TextStyle blacktTextStyle = GoogleFonts.nunito(color: blackcolor);

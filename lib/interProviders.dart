@@ -14,18 +14,20 @@ class Prosthesis extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      theme: ThemeData(fontFamily: 'Nunito'),
-      home: const Scaffold(
-        body: localProviders(),
-      ),
-    );
+    return Sizer(builder: (context, orientation, deviceType) {
+      return MaterialApp(
+        theme: ThemeData(fontFamily: 'Nunito'),
+        home: const Scaffold(
+          body: LocalProviders(),
+        ),
+      );
+    });
   }
 }
 
 List<Map<String, String>> doctor = [
   {
-    'image': 'assets/icon/providers/local/p11.png',
+    'image': 'assets/images/p11.png',
     'name': 'Dr. Suparjo',
     'subtitle': 'subtitle',
     'special': 'Top Speciality Extrimity',
@@ -33,7 +35,7 @@ List<Map<String, String>> doctor = [
     'icon': 'assets/images/right1.svg',
   },
   {
-    'image': 'assets/icon/providers/local/p12.png',
+    'image': 'assets/images/p12.png',
     'name': 'Dr. Ammar',
     'subtitle': 'subtitle',
     'special': 'Bottom Speciality Extrimity',
@@ -41,7 +43,7 @@ List<Map<String, String>> doctor = [
     'icon': 'assets/images/right1.svg',
   },
   {
-    'image': 'assets/icon/providers/local/p13.png',
+    'image': 'assets/images/p13.png',
     'name': 'Dr. Nathalia',
     'subtitle': 'subtitle',
     'special': 'Top & Bottom Extrimity',
@@ -49,7 +51,7 @@ List<Map<String, String>> doctor = [
     'icon': 'assets/images/right1.svg',
   },
   {
-    'image': 'assets/icon/providers/local/p14.png',
+    'image': 'assets/images/p14.png',
     'name': 'Dr. Joya',
     'subtitle': 'subtitle',
     'special': 'Bottom Speciality Extrimity',
@@ -58,14 +60,15 @@ List<Map<String, String>> doctor = [
   }
 ];
 
-class localProviders extends StatefulWidget {
-  const localProviders({Key? key}) : super(key: key);
+class LocalProviders extends StatefulWidget {
+  const LocalProviders({Key? key}) : super(key: key);
+
   @override
-  State<localProviders> createState() => _localProvidersState();
+  State<LocalProviders> createState() => _LocalProvidersState();
 }
 
-class _localProvidersState extends State<localProviders> {
-  final padding = const EdgeInsets.symmetric(horizontal: 30);
+class _LocalProvidersState extends State<LocalProviders> {
+  final padding = const EdgeInsets.symmetric(horizontal: 20);
 
   @override
   Widget build(BuildContext context) {
@@ -75,30 +78,30 @@ class _localProvidersState extends State<localProviders> {
           height: 50,
         ),
         Container(
-          padding: padding,
+          padding: const EdgeInsets.symmetric(horizontal: 15),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               SizedBox(
-                width: 30,
-                height: 30,
+                width: 3.5.h,
+                height: 3.5.h,
                 child: SvgPicture.asset(
                   'assets/images/left.svg',
                 ),
               ),
               const Spacer(),
-              const Text(
+              Text(
                 'Local Providers',
                 style: TextStyle(
-                  color: Color(0xff363C3C),
-                  fontSize: 18,
+                  color: const Color(0xff363C3C),
+                  fontSize: 15.sp,
                   fontWeight: FontWeight.w700,
                 ),
               ),
               const Spacer(),
               SizedBox(
-                width: 30,
-                height: 30,
+                width: 3.5.h,
+                height: 3.5.h,
                 child: SvgPicture.asset(
                   'assets/images/filter.svg',
                 ),
@@ -110,11 +113,11 @@ class _localProvidersState extends State<localProviders> {
           height: 25,
         ),
         Container(
-          padding: padding,
-          width: 330,
-          height: 180,
+          padding: const EdgeInsets.symmetric(horizontal: 20),
+          width: 41.h,
+          height: 20.h,
           decoration: BoxDecoration(
-            color: Colors.black,
+            color: Color(0xffd9d9d9),
             borderRadius: BorderRadius.circular(30),
           ),
         ),
@@ -122,22 +125,22 @@ class _localProvidersState extends State<localProviders> {
           height: 20,
         ),
         Container(
-          padding: padding,
+          padding: const EdgeInsets.symmetric(horizontal: 20),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.start,
-            children: const [
+            children: [
               Text(
                 'Local service provider',
                 style: TextStyle(
                   fontWeight: FontWeight.w700,
-                  fontSize: 20,
+                  fontSize: 15.sp,
                 ),
               ),
             ],
           ),
         ),
         const SizedBox(
-          height: 20,
+          height: 8,
         ),
         Expanded(
           child: Column(
@@ -148,60 +151,87 @@ class _localProvidersState extends State<localProviders> {
                 shrinkWrap: true,
                 itemBuilder: (BuildContext context, index) {
                   return Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 30),
+                    padding: const EdgeInsets.symmetric(horizontal: 20),
                     child: Column(
                       children: [
                         Container(
                           padding: const EdgeInsets.only(bottom: 20),
-                          child: Row(
-                            children: [
-                              SizedBox(
-                                width: 100,
-                                height: 100,
-                                child: Image(
-                                  image: AssetImage(
-                                    '${doctor[index]['image']}',
-                                  ),
-                                ),
-                              ),
-                              const SizedBox(
-                                width: 15,
-                              ),
-                              Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text(
-                                    '${doctor[index]['name']}',
-                                    style: const TextStyle(
-                                      fontSize: 18,
-                                      fontWeight: FontWeight.w700,
+                          child: Container(
+                            width: 42.h,
+                            height: 12.h,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(20),
+                              color: const Color(0xffD9D9D9).withOpacity(0.2),
+                            ),
+                            child: Row(
+                              children: [
+                                SizedBox(
+                                  width: 12.h,
+                                  height: 12.h,
+                                  child: Image(
+                                    image: AssetImage(
+                                      '${doctor[index]['image']}',
                                     ),
                                   ),
-                                  Text(
-                                    '${doctor[index]['subtitle']}',
-                                  ),
-                                  Text(
-                                    '${doctor[index]['special']}',
-                                    style: const TextStyle(
-                                      fontWeight: FontWeight.w600,
+                                ),
+                                const SizedBox(
+                                  width: 15,
+                                ),
+                                Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    const Spacer(),
+                                    Text(
+                                      '${doctor[index]['name']}',
+                                      style: TextStyle(
+                                        fontSize: 18.sp,
+                                        fontWeight: FontWeight.w700,
+                                      ),
+                                    ),
+                                    Text(
+                                      '${doctor[index]['subtitle']}',
+                                      style: TextStyle(fontSize: 9.sp),
+                                    ),
+                                    Text(
+                                      '${doctor[index]['special']}',
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.w600,
+                                        fontSize: 9.sp,
+                                      ),
+                                    ),
+                                    Text(
+                                      '${doctor[index]['loc']}',
+                                      style: TextStyle(fontSize: 9.sp),
+                                    ),
+                                    const Spacer(),
+                                  ],
+                                ),
+                                const Spacer(),
+                                Padding(
+                                  padding: EdgeInsets.only(right: 15.sp),
+                                  child: Container(
+                                    width: 40,
+                                    height: 40,
+                                    decoration: BoxDecoration(
+                                      border: Border.all(
+                                        color: const Color(0xffDDDDDD),
+                                      ),
+                                      borderRadius: BorderRadius.circular(
+                                        8,
+                                      ),
+                                    ),
+                                    child: Container(
+                                      padding: const EdgeInsets.all(8),
+                                      child: SvgPicture.asset(
+                                        '${doctor[index]['icon']}',
+                                      ),
                                     ),
                                   ),
-                                  Text(
-                                    '${doctor[index]['loc']}',
-                                  ),
-                                ],
-                              ),
-                              const Spacer(),
-                              SizedBox(
-                                width: 25,
-                                height: 25,
-                                child: SvgPicture.asset(
-                                  '${doctor[index]['icon']}',
-                                ),
-                              )
-                            ],
+                                )
+                              ],
+                            ),
                           ),
-                        )
+                        ),
                       ],
                     ),
                   );

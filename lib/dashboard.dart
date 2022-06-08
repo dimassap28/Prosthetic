@@ -42,7 +42,7 @@ class _DashboardState extends State<Dashboard> {
           ),
           child: SvgPicture.asset(
             image,
-            color: bluecolor,
+            color: orangecolor,
           ),
         ),
         Text(
