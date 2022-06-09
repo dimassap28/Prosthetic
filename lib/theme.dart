@@ -8,13 +8,15 @@ Color lightbluecolor = const Color(0xFFADDCDF);
 Color ltbluecolor = const Color(0xFFE4F1F2);
 Color graycolor = const Color(0xFFDDDDDD);
 Color blackcolor = const Color(0xFF363C3C);
+Color whitecolor = const Color(0xFFFFFFFF);
 
 // TextStyle
 
-TextStyle bluetTextStyle = GoogleFonts.nunito(color: orangecolor);
+TextStyle orangetTextStyle = GoogleFonts.nunito(color: orangecolor);
 TextStyle lightblueStyle = GoogleFonts.nunito(color: lightbluecolor);
 TextStyle ltbluetTextStyle = GoogleFonts.nunito(color: ltbluecolor);
 TextStyle blacktTextStyle = GoogleFonts.nunito(color: blackcolor);
+TextStyle whitetTextStyle = GoogleFonts.nunito(color: whitecolor);
 
 // FontWeight
 

@@ -41,6 +41,7 @@ dependencies:
   flutter_svg: ^1.0.3
   sizer: ^2.0.15
   getwidget: ^2.0.4
+  url_launcher: ^6.1.3
   
 flutter_native_splash:
   color: "#FFFFFF"
@@ -73,6 +74,7 @@ flutter:
   assets:
     # Dashboard
     - assets/icon/
+    - assets/icon/sign_inup/
     - assets/icon/providers/
     - assets/icon/dashboard/
     - assets/icon/providers/local/
