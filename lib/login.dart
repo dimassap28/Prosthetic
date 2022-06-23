@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:prosthesis/register.dart';
 import 'package:prosthesis/theme.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -40,18 +41,13 @@ class _LoginState extends State<Login> {
                       leading: IconButton(
                         icon: const Icon(Icons.arrow_back_ios_new_rounded),
                         onPressed: () {
-                          Navigator.pushReplacement(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => const Dashboard(),
-                            ),
-                          );
+                          Get.to(() => const Dashboard());
                         },
                       ),
                     ),
                   ),
                   Container(
-                    height: 350,
+                    height: getHeight(350),
                     color: Colors.transparent,
                     // color: orangecolor,
                     padding: const EdgeInsets.fromLTRB(20, 150, 190, 0),
@@ -59,9 +55,9 @@ class _LoginState extends State<Login> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          "Prosthesis App",
+                          "Prosthesic Go",
                           style: whitetTextStyle.copyWith(
-                            fontSize: 16,
+                            fontSize: getWidth(16),
                             fontWeight: normal,
                             shadows: <Shadow>[
                               Shadow(
@@ -72,13 +68,13 @@ class _LoginState extends State<Login> {
                             ],
                           ),
                         ),
-                        const SizedBox(
-                          height: 5,
+                        SizedBox(
+                          height: getHeight(5),
                         ),
                         Text(
                           "Strength is not something you have, it’s something you find",
                           style: whitetTextStyle.copyWith(
-                            fontSize: 24,
+                            fontSize: getWidth(24),
                             fontWeight: bold,
                             shadows: <Shadow>[
                               Shadow(
@@ -104,20 +100,20 @@ class _LoginState extends State<Login> {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          const SizedBox(
-                            height: 5,
+                          SizedBox(
+                            height: getHeight(5),
                           ),
                           Text(
                             "Log in",
                             style: blacktTextStyle.copyWith(
-                                fontSize: 20, fontWeight: bold),
+                                fontSize: getWidth(20), fontWeight: bold),
                           ),
-                          const SizedBox(
-                            height: 30,
+                          SizedBox(
+                            height: getHeight(30),
                           ),
                           Container(
                             padding: const EdgeInsets.fromLTRB(15, 0, 5, 0),
-                            height: 52,
+                            height: getHeight(50),
                             decoration: BoxDecoration(
                               color: const Color(0xFFF0F0F0),
                               borderRadius: BorderRadius.circular(20),
@@ -125,13 +121,14 @@ class _LoginState extends State<Login> {
                             child: Center(
                               child: TextField(
                                 maxLines: 1,
-                                style: blacktTextStyle.copyWith(fontSize: 16),
+                                style: blacktTextStyle.copyWith(
+                                    fontSize: getWidth(16)),
                                 textAlignVertical: TextAlignVertical.center,
                                 decoration: InputDecoration(
                                   filled: false,
                                   suffixIcon: Padding(
-                                    padding: const EdgeInsets.symmetric(
-                                        vertical: 14),
+                                    padding: EdgeInsets.symmetric(
+                                        vertical: getHeight(14)),
                                     child: SvgPicture.asset(
                                       "assets/icon/sign_inup/Message.svg",
                                       color:
@@ -157,12 +154,12 @@ class _LoginState extends State<Login> {
                               ),
                             ),
                           ),
-                          const SizedBox(
-                            height: 15,
+                          SizedBox(
+                            height: getHeight(15),
                           ),
                           Container(
                             padding: const EdgeInsets.fromLTRB(15, 0, 5, 0),
-                            height: 52,
+                            height: getHeight(50),
                             decoration: BoxDecoration(
                               color: const Color(0xFFF0F0F0),
                               borderRadius: BorderRadius.circular(20),
@@ -171,13 +168,14 @@ class _LoginState extends State<Login> {
                               child: TextField(
                                 obscureText: true,
                                 maxLines: 1,
-                                style: blacktTextStyle.copyWith(fontSize: 16),
+                                style: blacktTextStyle.copyWith(
+                                    fontSize: getWidth(16)),
                                 textAlignVertical: TextAlignVertical.center,
                                 decoration: InputDecoration(
                                   filled: false,
                                   suffixIcon: Padding(
-                                    padding: const EdgeInsets.symmetric(
-                                        vertical: 14),
+                                    padding: EdgeInsets.symmetric(
+                                        vertical: getHeight(14)),
                                     child: SvgPicture.asset(
                                       "assets/icon/sign_inup/Hide.svg",
                                       color:
@@ -203,20 +201,15 @@ class _LoginState extends State<Login> {
                               ),
                             ),
                           ),
-                          const SizedBox(
-                            height: 15,
+                          SizedBox(
+                            height: getHeight(15),
                           ),
                           InkWell(
                             onTap: () {
-                              Navigator.pushReplacement(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => const Dashboard(),
-                                ),
-                              );
+                              Get.to(() => const Dashboard());
                             },
                             child: Container(
-                              height: 52,
+                              height: getHeight(50),
                               decoration: BoxDecoration(
                                 color: orangecolor,
                                 borderRadius: BorderRadius.circular(20),
@@ -225,15 +218,15 @@ class _LoginState extends State<Login> {
                                 child: Text(
                                   "Login",
                                   style: whitetTextStyle.copyWith(
-                                    fontSize: 20,
+                                    fontSize: getWidth(20),
                                     fontWeight: normal,
                                   ),
                                 ),
                               ),
                             ),
                           ),
-                          const SizedBox(
-                            height: 30,
+                          SizedBox(
+                            height: getHeight(30),
                           ),
                           InkWell(
                             onTap: () {
@@ -250,15 +243,15 @@ class _LoginState extends State<Login> {
                                 child: Text(
                                   "Forgot password",
                                   style: blacktTextStyle.copyWith(
-                                      fontSize: 16,
+                                      fontSize: getWidth(16),
                                       fontWeight: bold,
                                       decoration: TextDecoration.underline),
                                 ),
                               ),
                             ),
                           ),
-                          const SizedBox(
-                            height: 20,
+                          SizedBox(
+                            height: getHeight(20),
                           ),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.center,
@@ -266,23 +259,18 @@ class _LoginState extends State<Login> {
                               Text(
                                 "Dont have an account?",
                                 style: blacktTextStyle.copyWith(
-                                  fontSize: 16,
+                                  fontSize: getWidth(16),
                                   fontWeight: bold,
                                 ),
                               ),
                               InkWell(
                                 onTap: () {
-                                  Navigator.pushReplacement(
-                                    context,
-                                    MaterialPageRoute(
-                                      builder: (context) => const Register(),
-                                    ),
-                                  );
+                                  Get.to(() => const Register());
                                 },
                                 child: Text(
                                   " Register",
                                   style: orangetTextStyle.copyWith(
-                                      fontSize: 16, fontWeight: bold),
+                                      fontSize: getWidth(16), fontWeight: bold),
                                 ),
                               ),
                             ],

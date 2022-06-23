@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:prosthesis/theme.dart';
-import 'dashboard.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class Rehabilitation extends StatefulWidget {
@@ -43,18 +43,13 @@ class _RehabilitationState extends State<Rehabilitation> {
                       leading: IconButton(
                         icon: const Icon(Icons.arrow_back_ios_new_rounded),
                         onPressed: () {
-                          Navigator.pushReplacement(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => const Dashboard(),
-                            ),
-                          );
+                          Get.back();
                         },
                       ),
                     ),
                   ),
                   Container(
-                    height: 350,
+                    height: getHeight(350),
                     color: Colors.transparent,
                     // color: orangecolor,
                     padding: const EdgeInsets.fromLTRB(20, 150, 200, 0),
@@ -62,9 +57,9 @@ class _RehabilitationState extends State<Rehabilitation> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          "Prosthesis App",
+                          "Prosthesic Go",
                           style: whitetTextStyle.copyWith(
-                            fontSize: 16,
+                            fontSize: getWidth(16),
                             fontWeight: normal,
                             shadows: <Shadow>[
                               Shadow(
@@ -75,13 +70,13 @@ class _RehabilitationState extends State<Rehabilitation> {
                             ],
                           ),
                         ),
-                        const SizedBox(
-                          height: 5,
+                        SizedBox(
+                          height: getHeight(5),
                         ),
                         Text(
                           "Achieve independence, with the most efficient gait possible.",
                           style: whitetTextStyle.copyWith(
-                            fontSize: 24,
+                            fontSize: getWidth(24),
                             fontWeight: bold,
                             shadows: <Shadow>[
                               Shadow(
@@ -97,8 +92,8 @@ class _RehabilitationState extends State<Rehabilitation> {
                   ),
                   Expanded(
                     child: Container(
-                      padding: const EdgeInsets.symmetric(
-                          vertical: 0, horizontal: 20),
+                      padding: EdgeInsets.symmetric(
+                          vertical: 0, horizontal: getWidth(20)),
                       decoration: const BoxDecoration(
                         color: Colors.transparent,
                       ),
@@ -106,8 +101,8 @@ class _RehabilitationState extends State<Rehabilitation> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         mainAxisAlignment: MainAxisAlignment.end,
                         children: [
-                          const SizedBox(
-                            height: 150,
+                          SizedBox(
+                            height: getHeight(150),
                           ),
                           InkWell(
                             onTap: () => launchUrl(
@@ -116,7 +111,7 @@ class _RehabilitationState extends State<Rehabilitation> {
                               ),
                             ),
                             child: Container(
-                              height: 52,
+                              height: getHeight(50),
                               decoration: BoxDecoration(
                                 color: orangecolor,
                                 borderRadius: BorderRadius.circular(20),
@@ -125,15 +120,15 @@ class _RehabilitationState extends State<Rehabilitation> {
                                 child: Text(
                                   "Rehabilitation Services",
                                   style: whitetTextStyle.copyWith(
-                                    fontSize: 20,
+                                    fontSize: getWidth(20),
                                     fontWeight: bold,
                                   ),
                                 ),
                               ),
                             ),
                           ),
-                          const SizedBox(
-                            height: 30,
+                          SizedBox(
+                            height: getHeight(30),
                           ),
                         ],
                       ),

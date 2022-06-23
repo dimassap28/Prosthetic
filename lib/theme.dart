@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 // Colors
@@ -29,3 +30,13 @@ FontWeight semibold = FontWeight.w600;
 FontWeight bold = FontWeight.w700;
 FontWeight extrabold = FontWeight.w800;
 FontWeight black = FontWeight.w900;
+
+//Responsive
+
+double getWidth(double size) {
+  return Get.width / 392.72727272727275 * size;
+}
+
+double getHeight(double size) {
+  return Get.height / 850.9090909090909 * size;
+}

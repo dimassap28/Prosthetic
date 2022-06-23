@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:prosthesis/international_providers.dart';
 import 'package:prosthesis/local_providers.dart';
 import 'package:prosthesis/login.dart';
@@ -8,7 +9,6 @@ import 'package:prosthesis/theme.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:intl/intl.dart';
 import 'package:carousel_slider/carousel_slider.dart';
-// import 'package:sizer/sizer.dart';
 
 void main() {
   runApp(
@@ -31,19 +31,19 @@ class _DashboardState extends State<Dashboard> {
 
   List<Widget> slider = [
     SizedBox(
-      height: 200,
+      height: getHeight(200),
       child: Image.asset(
         "assets/icon/dashboard/slider.png",
       ),
     ),
     SizedBox(
-      height: 200,
+      height: getHeight(200),
       child: Image.asset(
         "assets/icon/dashboard/slider.png",
       ),
     ),
     SizedBox(
-      height: 200,
+      height: getHeight(200),
       child: Image.asset(
         "assets/icon/dashboard/slider.png",
       ),
@@ -65,20 +65,17 @@ class _DashboardState extends State<Dashboard> {
       children: [
         InkWell(
           onTap: () {
-            Navigator.pushReplacement(
-              context,
-              MaterialPageRoute(builder: (context) => widget),
-            );
+            Get.to(Builder(builder: (context) => widget));
           },
           child: Container(
             margin: const EdgeInsets.symmetric(vertical: 5),
             padding: const EdgeInsets.all(20),
-            width: 70,
-            height: 70,
+            width: getWidth(70),
+            height: getHeight(70),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(24),
               border: Border.all(
-                width: 1,
+                width: getWidth(1),
                 color: graycolor,
               ),
             ),
@@ -90,7 +87,8 @@ class _DashboardState extends State<Dashboard> {
         ),
         Text(
           menuTitle,
-          style: blacktTextStyle.copyWith(fontSize: 14, fontWeight: normal),
+          style: blacktTextStyle.copyWith(
+              fontSize: getWidth(14), fontWeight: normal),
           textAlign: TextAlign.center,
         ),
       ],
@@ -108,26 +106,26 @@ class _DashboardState extends State<Dashboard> {
         Center(
           child: Image.asset(
             image,
-            width: 156,
+            width: getWidth(156),
             fit: BoxFit.fitHeight,
           ),
         ),
-        const SizedBox(
-          height: 5,
+        SizedBox(
+          height: getHeight(5),
         ),
         Text(
           title,
           maxLines: 1,
           overflow: TextOverflow.ellipsis,
           style: blacktTextStyle.copyWith(
-            fontSize: 18,
+            fontSize: getWidth(18),
             fontWeight: bold,
           ),
         ),
         Text(
           subtitle,
           style: blacktTextStyle.copyWith(
-            fontSize: 14,
+            fontSize: getWidth(14),
             fontWeight: normal,
           ),
         ),
@@ -142,8 +140,8 @@ class _DashboardState extends State<Dashboard> {
       backgroundColor: whitecolor,
       body: SafeArea(
         child: Container(
-          margin: const EdgeInsets.only(top: 10),
-          padding: const EdgeInsets.all(24),
+          margin: EdgeInsets.only(top: getHeight(10)),
+          padding: EdgeInsets.all(getHeight(24)),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -157,14 +155,14 @@ class _DashboardState extends State<Dashboard> {
                           Text(
                             "Hello, ",
                             style: blacktTextStyle.copyWith(
-                              fontSize: 24,
+                              fontSize: getWidth(24),
                               fontWeight: medium,
                             ),
                           ),
                           Text(
                             "$name!",
                             style: blacktTextStyle.copyWith(
-                              fontSize: 24,
+                              fontSize: getWidth(24),
                               fontWeight: bold,
                             ),
                           ),
@@ -172,30 +170,25 @@ class _DashboardState extends State<Dashboard> {
                       ),
                       Text(
                         printDate,
-                        style: blacktTextStyle.copyWith(fontSize: 16),
+                        style: blacktTextStyle.copyWith(fontSize: getWidth(16)),
                       )
                     ],
                   ),
                   const Spacer(),
                   InkWell(
                     onTap: () {
-                      Navigator.pushReplacement(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => const Login(),
-                        ),
-                      );
+                      Get.to(() => const Login());
                     },
                     child: Image.asset(
                       "assets/icon/dashboard/profile.png",
-                      height: 40,
+                      height: getHeight(40),
                       fit: BoxFit.cover,
                     ),
                   )
                 ],
               ),
-              const SizedBox(
-                height: 20,
+              SizedBox(
+                height: getHeight(20),
               ),
               CarouselSlider(
                 items: slider,
@@ -221,10 +214,10 @@ class _DashboardState extends State<Dashboard> {
                     return GestureDetector(
                       onTap: () => _controller.animateToPage(entry.key),
                       child: Container(
-                        width: 8,
-                        height: 8,
-                        margin: const EdgeInsets.symmetric(
-                            vertical: 8.0, horizontal: 4.0),
+                        width: getWidth(8),
+                        height: getHeight(8),
+                        margin: EdgeInsets.symmetric(
+                            vertical: getHeight(8), horizontal: getWidth(4)),
                         decoration: BoxDecoration(
                           shape: BoxShape.rectangle,
                           borderRadius: BorderRadius.circular(2),
@@ -239,12 +232,12 @@ class _DashboardState extends State<Dashboard> {
                   },
                 ).toList(),
               ),
-              const SizedBox(
-                height: 16,
+              SizedBox(
+                height: getHeight(16),
               ),
               Container(
-                padding: const EdgeInsets.symmetric(horizontal: 5),
-                height: 52,
+                padding: EdgeInsets.symmetric(horizontal: getWidth(5)),
+                height: getHeight(52),
                 decoration: BoxDecoration(
                   color: const Color(0xFFF0F0F0),
                   borderRadius: BorderRadius.circular(20),
@@ -252,12 +245,12 @@ class _DashboardState extends State<Dashboard> {
                 child: Center(
                   child: TextField(
                     maxLines: 1,
-                    style: blacktTextStyle.copyWith(fontSize: 16),
+                    style: blacktTextStyle.copyWith(fontSize: getWidth(16)),
                     textAlignVertical: TextAlignVertical.center,
                     decoration: InputDecoration(
                       filled: false,
                       prefixIcon: Padding(
-                        padding: const EdgeInsets.symmetric(vertical: 14),
+                        padding: EdgeInsets.symmetric(vertical: getHeight(14)),
                         child: SvgPicture.asset(
                           "assets/icon/dashboard/Search.svg",
                           color: const Color.fromRGBO(54, 60, 60, 0.5),
@@ -280,18 +273,18 @@ class _DashboardState extends State<Dashboard> {
                   ),
                 ),
               ),
-              const SizedBox(
-                height: 20,
+              SizedBox(
+                height: getHeight(20),
               ),
               Text(
                 "Menus",
                 style: blacktTextStyle.copyWith(
-                  fontSize: 20,
+                  fontSize: getWidth(20),
                   fontWeight: bold,
                 ),
               ),
               Container(
-                margin: const EdgeInsets.symmetric(vertical: 5),
+                margin: EdgeInsets.symmetric(vertical: getHeight(5)),
                 child: Row(
                   children: [
                     menus(
@@ -303,13 +296,13 @@ class _DashboardState extends State<Dashboard> {
                     menus(
                       image: "assets/icon/dashboard/Call.svg",
                       menuTitle: "Local\nProviders",
-                      widget: const localProviders(),
+                      widget: const LocalProviders(),
                     ),
                     const Spacer(),
                     menus(
                       image: "assets/icon/dashboard/Calling.svg",
                       menuTitle: "International\nProviders",
-                      widget: const interProviders(),
+                      widget: const InterProviders(),
                     ),
                     const Spacer(),
                     menus(
@@ -320,15 +313,15 @@ class _DashboardState extends State<Dashboard> {
                   ],
                 ),
               ),
-              const SizedBox(
-                height: 20,
+              SizedBox(
+                height: getHeight(20),
               ),
               Row(
                 children: [
                   Text(
                     "Articles",
                     style: blacktTextStyle.copyWith(
-                      fontSize: 20,
+                      fontSize: getWidth(20),
                       fontWeight: bold,
                     ),
                   ),
@@ -338,7 +331,7 @@ class _DashboardState extends State<Dashboard> {
                     child: Text(
                       "See more",
                       style: orangetTextStyle.copyWith(
-                        fontSize: 14,
+                        fontSize: getWidth(14),
                         fontWeight: bold,
                       ),
                     ),
