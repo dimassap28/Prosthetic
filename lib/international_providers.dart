@@ -30,7 +30,7 @@ class InterProviders extends StatelessWidget {
 
 List<Map<String, String>> doctor = [
   {
-    'image': 'assets/icon/providers/inter/p21.png',
+    'image': 'assets/icon/providers/inter/ID1.png',
     'name': 'Dr. Sacha',
     'subtitle': 'subtitle',
     'special': 'Top Speciality Extrimity',
@@ -38,7 +38,7 @@ List<Map<String, String>> doctor = [
     'icon': 'assets/icon/providers/right1.svg',
   },
   {
-    'image': 'assets/icon/providers/inter/p22.png',
+    'image': 'assets/icon/providers/inter/ID2.png',
     'name': 'Dr. Johanson',
     'subtitle': 'subtitle',
     'special': 'Bottom Speciality Extrimity',
@@ -46,7 +46,7 @@ List<Map<String, String>> doctor = [
     'icon': 'assets/icon/providers/right1.svg',
   },
   {
-    'image': 'assets/icon/providers/inter/p23.png',
+    'image': 'assets/icon/providers/inter/ID3.png',
     'name': 'Dr. Christ A',
     'subtitle': 'subtitle',
     'special': 'Top & Bottom Extrimity',
@@ -54,7 +54,7 @@ List<Map<String, String>> doctor = [
     'icon': 'assets/icon/providers/right1.svg',
   },
   {
-    'image': 'assets/icon/providers/inter/p24.png',
+    'image': 'assets/icon/providers/inter/ID4.png',
     'name': 'Dr. Joe',
     'subtitle': 'subtitle',
     'special': 'Bottom Speciality Extrimity',

@@ -50,12 +50,13 @@ class _RegisterState extends State<Register> {
                     height: getHeight(350),
                     color: Colors.transparent,
                     // color: orangecolor,
-                    padding: const EdgeInsets.fromLTRB(20, 150, 190, 0),
+                    padding: EdgeInsets.fromLTRB(
+                        getWidth(20), getHeight(120), getWidth(190), 0),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          "Prosthesic Go",
+                          "Prosthetic Go",
                           style: whitetTextStyle.copyWith(
                             fontSize: getWidth(16),
                             fontWeight: normal,

@@ -30,7 +30,7 @@ class LocalProviders extends StatelessWidget {
 
 List<Map<String, String>> doctor = [
   {
-    'image': 'assets/icon/providers/local/p11.png',
+    'image': 'assets/icon/providers/local/LD1.png',
     'name': 'Dr. Suparjo',
     'subtitle': 'subtitle',
     'special': 'Top Speciality Extrimity',
@@ -38,7 +38,7 @@ List<Map<String, String>> doctor = [
     'icon': 'assets/icon/providers/right1.svg',
   },
   {
-    'image': 'assets/icon/providers/local/p12.png',
+    'image': 'assets/icon/providers/local/LD2.png',
     'name': 'Dr. Ammar',
     'subtitle': 'subtitle',
     'special': 'Bottom Speciality Extrimity',
@@ -46,7 +46,7 @@ List<Map<String, String>> doctor = [
     'icon': 'assets/icon/providers/right1.svg',
   },
   {
-    'image': 'assets/icon/providers/local/p13.png',
+    'image': 'assets/icon/providers/local/LD3.png',
     'name': 'Dr. Nathalia',
     'subtitle': 'subtitle',
     'special': 'Top & Bottom Extrimity',
@@ -54,7 +54,7 @@ List<Map<String, String>> doctor = [
     'icon': 'assets/icon/providers/right1.svg',
   },
   {
-    'image': 'assets/icon/providers/local/p14.png',
+    'image': 'assets/icon/providers/local/LD4.png',
     'name': 'Dr. Joya',
     'subtitle': 'subtitle',
     'special': 'Bottom Speciality Extrimity',
