@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:prosthesis/theme.dart';
-import 'package:url_launcher/url_launcher.dart';
+import 'package:url_launcher/url_launcher_string.dart';
 
 class Rehabilitation extends StatefulWidget {
   const Rehabilitation({Key? key}) : super(key: key);
@@ -53,7 +53,11 @@ class _RehabilitationState extends State<Rehabilitation> {
                     color: Colors.transparent,
                     // color: orangecolor,
                     padding: EdgeInsets.fromLTRB(
-                        getWidth(20), getHeight(120), getWidth(190), 0),
+                      getWidth(20),
+                      getHeight(120),
+                      getWidth(190),
+                      0,
+                    ),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -62,7 +66,7 @@ class _RehabilitationState extends State<Rehabilitation> {
                           style: whitetTextStyle.copyWith(
                             fontSize: getWidth(16),
                             fontWeight: normal,
-                            shadows: <Shadow>[
+                            shadows: [
                               Shadow(
                                 offset: const Offset(1, 1),
                                 blurRadius: 1,
@@ -106,10 +110,8 @@ class _RehabilitationState extends State<Rehabilitation> {
                             height: getHeight(150),
                           ),
                           InkWell(
-                            onTap: () => launchUrl(
-                              Uri.parse(
-                                'https://wa.me/+6287777081250',
-                              ),
+                            onTap: () => launchUrlString(
+                              'https://api.whatsapp.com/send/?phone=6287777081250&text=Layanan%20Rehabilitasi%20Prostetik.',
                             ),
                             child: Container(
                               height: getHeight(50),

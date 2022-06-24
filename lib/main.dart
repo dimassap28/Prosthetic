@@ -1,6 +1,6 @@
 import 'dart:async';
 import 'package:flutter_svg/svg.dart';
-import 'package:simple_shadow/simple_shadow.dart';
+// import 'package:simple_shadow/simple_shadow.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
@@ -56,16 +56,25 @@ class _SplashScreenState extends State<SplashScreen> {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            SimpleShadow(
-                child: SvgPicture.asset('assets/icon/welcome/LOGO.svg')),
-            SizedBox(
-              height: getHeight(15),
-            ),
-            Text(
-              'Prosthetic Go',
-              style: blacktTextStyle.copyWith(
-                  fontWeight: bold, fontSize: getWidth(20)),
+            Padding(
+              padding: EdgeInsets.only(left: getHeight(16)),
+              child: SvgPicture.asset(
+                'assets/icon/welcome/LOGO.svg',
+                width: getHeight(72),
+              ),
             )
+            // SimpleShadow(
+            //     opacity: 0.2,
+            //     offset: const Offset(1, 1),
+            //     child: SvgPicture.asset('assets/icon/welcome/LOGO.svg')),
+            // SizedBox(
+            //   height: getHeight(20),
+            // ),
+            // Text(
+            //   'Prosthetic Go',
+            //   style: blacktTextStyle.copyWith(
+            //       fontWeight: bold, fontSize: getWidth(14)),
+            // )
           ],
         ),
       )),
