@@ -35,8 +35,8 @@ class _ProsthesisInfoState extends State<ProsthesisInfo> {
                         Get.back();
                       },
                       child: SizedBox(
-                        width: getWidth(3),
-                        height: getHeight(3),
+                        width: getWidth(25),
+                        height: getHeight(25),
                         child: SvgPicture.asset(
                           'assets/icon/providers/left.svg',
                         ),
@@ -47,7 +47,7 @@ class _ProsthesisInfoState extends State<ProsthesisInfo> {
                       'Prosthesic Information',
                       style: TextStyle(
                         color: const Color(0xff363C3C),
-                        fontSize: getWidth(15),
+                        fontSize: getWidth(20),
                         fontWeight: FontWeight.w700,
                       ),
                     ),
@@ -55,8 +55,8 @@ class _ProsthesisInfoState extends State<ProsthesisInfo> {
                     SizedBox(
                       child: SvgPicture.asset(
                         'assets/icon/providers/filter.svg',
-                        width: getWidth(3),
-                        height: getHeight(3),
+                        width: getWidth(25),
+                        height: getHeight(25),
                       ),
                     ),
                   ],
