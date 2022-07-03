@@ -65,7 +65,7 @@ class _DashboardState extends State<Dashboard> {
       children: [
         InkWell(
           onTap: () {
-            Get.to(Builder(builder: (context) => widget));
+            Get.to(() => Builder(builder: (context) => widget));
           },
           child: Container(
             margin: const EdgeInsets.symmetric(vertical: 5),

@@ -40,3 +40,5 @@ double getWidth(double size) {
 double getHeight(double size) {
   return Get.height / 850.9090909090909 * size;
 }
+
+//conten information

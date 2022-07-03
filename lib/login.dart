@@ -32,24 +32,24 @@ class _LoginState extends State<Login> {
                       // fit: BoxFit.cover,
                     ),
                   ),
+                  Positioned(
+                    child: AppBar(
+                      backgroundColor: Colors.transparent,
+                      elevation: 0,
+                      automaticallyImplyLeading: true,
+                      leading: IconButton(
+                        icon: const Icon(Icons.arrow_back_ios_new_rounded),
+                        onPressed: () {
+                          Get.to(
+                            () => const Dashboard(),
+                          );
+                        },
+                      ),
+                    ),
+                  ),
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Positioned(
-                        child: AppBar(
-                          backgroundColor: Colors.transparent,
-                          elevation: 0,
-                          automaticallyImplyLeading: true,
-                          leading: IconButton(
-                            icon: const Icon(Icons.arrow_back_ios_new_rounded),
-                            onPressed: () {
-                              Get.to(
-                                () => const Dashboard(),
-                              );
-                            },
-                          ),
-                        ),
-                      ),
                       Container(
                         height: getHeight(390),
                         color: Colors.transparent,
