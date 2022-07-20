@@ -19,6 +19,7 @@ class InterProviders extends StatelessWidget {
   Widget build(BuildContext context) {
     return Sizer(builder: (context, orientation, deviceType) {
       return MaterialApp(
+        debugShowCheckedModeBanner: false,
         theme: ThemeData(fontFamily: 'Nunito'),
         home: const Scaffold(
           body: InterProvider(),
@@ -77,47 +78,7 @@ class _InterProviderState extends State<InterProvider> {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        SizedBox(height: getHeight(50)),
-        Container(
-          padding: EdgeInsets.symmetric(horizontal: getWidth(20)),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              InkWell(
-                onTap: () {
-                  Get.to(() => const Dashboard());
-                },
-                child: SizedBox(
-                  child: SvgPicture.asset(
-                    'assets/icon/providers/left.svg',
-                    width: getWidth(25),
-                    height: getHeight(25),
-                  ),
-                ),
-              ),
-              const Spacer(),
-              Text(
-                'International Providers',
-                style: TextStyle(
-                  color: const Color(0xff363C3C),
-                  fontSize: getWidth(20),
-                  fontWeight: FontWeight.w700,
-                ),
-              ),
-              const Spacer(),
-              SizedBox(
-                child: SvgPicture.asset(
-                  'assets/icon/providers/filter.svg',
-                  width: getWidth(25),
-                  height: getHeight(25),
-                ),
-              ),
-            ],
-          ),
-        ),
-        SizedBox(
-          height: getHeight(25),
-        ),
+        SizedBox(height: getHeight(20)),
         Expanded(
           child: Column(
             children: [

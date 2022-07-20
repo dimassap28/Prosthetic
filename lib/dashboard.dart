@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:prosthesis/international_providers.dart';
-import 'package:prosthesis/local_providers.dart';
 import 'package:prosthesis/login.dart';
 import 'package:prosthesis/prosthesis_info.dart';
+import 'package:prosthesis/providers.dart';
 import 'package:prosthesis/rehabilitation.dart';
 import 'package:prosthesis/theme.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -289,6 +288,7 @@ class _DashboardState extends State<Dashboard> {
                 Container(
                   margin: EdgeInsets.symmetric(vertical: getHeight(5)),
                   child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       menus(
                         image: "assets/icon/dashboard/Paper.svg",
@@ -297,20 +297,20 @@ class _DashboardState extends State<Dashboard> {
                       ),
                       const Spacer(),
                       menus(
-                        image: "assets/icon/dashboard/Call.svg",
-                        menuTitle: "Local\nProviders",
-                        widget: const LocalProviders(),
-                      ),
-                      const Spacer(),
-                      menus(
                         image: "assets/icon/dashboard/Calling.svg",
-                        menuTitle: "International\nProviders",
-                        widget: const InterProviders(),
+                        menuTitle: "Providers",
+                        widget: const Providers(),
                       ),
                       const Spacer(),
                       menus(
                         image: "assets/icon/dashboard/Heart.svg",
                         menuTitle: "Prosthesis\nRehabilitation",
+                        widget: const Rehabilitation(),
+                      ),
+                      const Spacer(),
+                      menus(
+                        image: "assets/icon/dashboard/Edit.svg",
+                        menuTitle: "My Story",
                         widget: const Rehabilitation(),
                       ),
                     ],
