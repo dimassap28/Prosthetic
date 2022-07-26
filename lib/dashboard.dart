@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:prosthesis/article.dart';
 import 'package:prosthesis/login.dart';
 import 'package:prosthesis/prosthesis_info.dart';
 import 'package:prosthesis/providers.dart';
@@ -14,6 +15,29 @@ void main() {
     const Dashboard(),
   );
 }
+
+List<Map<String, String>> _article = [
+  {
+    'image': 'assets/icon/dashboard/artikel.png',
+    'title': 'Kaki Palsu Prostetik',
+    'subtitle': 'lorem ipsum dolor sit',
+  },
+  {
+    'image': 'assets/icon/dashboard/artikel1.png',
+    'title': 'Manfaat Kaki Palsu',
+    'subtitle': 'lorem ipsum dolor sit',
+  },
+  {
+    'image': 'assets/icon/dashboard/artikel1.png',
+    'title': 'Manfaat Kaki Palsu',
+    'subtitle': 'lorem ipsum dolor sit',
+  },
+  {
+    'image': 'assets/icon/dashboard/artikel1.png',
+    'title': 'Manfaat Kaki Palsu',
+    'subtitle': 'lorem ipsum dolor sit',
+  },
+];
 
 class Dashboard extends StatefulWidget {
   const Dashboard({Key? key}) : super(key: key);
@@ -330,7 +354,9 @@ class _DashboardState extends State<Dashboard> {
                     ),
                     const Spacer(),
                     InkWell(
-                      onTap: () {},
+                      onTap: () {
+                        Get.to(() => const Article());
+                      },
                       child: Text(
                         "See more",
                         style: orangetTextStyle.copyWith(
@@ -341,24 +367,35 @@ class _DashboardState extends State<Dashboard> {
                     )
                   ],
                 ),
-                Container(
-                  padding: const EdgeInsets.symmetric(
-                    vertical: 10,
-                  ),
-                  child: Row(
-                    children: [
-                      article(
-                        image: "assets/icon/dashboard/artikel.png",
-                        title: "Kaki Palsu Prostetik",
-                        subtitle: "lorem ipsum dolor sit",
-                      ),
-                      const Spacer(),
-                      article(
-                        image: "assets/icon/dashboard/artikel1.png",
-                        title: "Manfaat Kaki Palsu",
-                        subtitle: "lorem ipsum dolor sit",
-                      ),
-                    ],
+                SizedBox(
+                  height: getHeight(205),
+                  width: double.infinity,
+                  child: ListView.separated(
+                    separatorBuilder: (BuildContext context, index) =>
+                        VerticalDivider(
+                      width: getWidth(30),
+                      color: Colors.white,
+                    ),
+                    padding: EdgeInsets.zero,
+                    itemCount: _article.length,
+                    shrinkWrap: true,
+                    scrollDirection: Axis.horizontal,
+                    itemBuilder: (BuildContext context, index) {
+                      return Container(
+                        padding: const EdgeInsets.symmetric(
+                          vertical: 10,
+                        ),
+                        child: Row(
+                          children: [
+                            article(
+                              image: "${_article[index]['image']}",
+                              title: "${_article[index]['title']}",
+                              subtitle: "${_article[index]['subtitle']}",
+                            ),
+                          ],
+                        ),
+                      );
+                    },
                   ),
                 ),
               ],
