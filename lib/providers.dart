@@ -52,7 +52,7 @@ class _StackOverState extends State<Providers>
                 ),
                 const Spacer(),
                 Text(
-                  'Providers',
+                  'Penyedia',
                   style: TextStyle(
                     color: const Color(0xff363C3C),
                     fontSize: getWidth(20),
@@ -63,6 +63,7 @@ class _StackOverState extends State<Providers>
                 SizedBox(
                   child: SvgPicture.asset(
                     'assets/icon/providers/filter.svg',
+                    color: whitecolor,
                     width: getWidth(25),
                     height: getHeight(25),
                   ),
@@ -89,10 +90,10 @@ class _StackOverState extends State<Providers>
                   color: orangecolor, borderRadius: BorderRadius.circular(13)),
               tabs: const [
                 Tab(
-                  text: 'Local',
+                  text: 'Lokal',
                 ),
                 Tab(
-                  text: 'Inter',
+                  text: 'Internasional',
                 )
               ],
             ),

@@ -291,7 +291,7 @@ class _DashboardState extends State<Dashboard> {
                         fillColor:
                             Theme.of(context).inputDecorationTheme.fillColor,
                         contentPadding: EdgeInsets.zero,
-                        hintText: 'Search anything here',
+                        hintText: 'Cari',
                         hintStyle: blacktTextStyle.copyWith(
                           color: const Color.fromRGBO(54, 60, 60, 0.5),
                         ),
@@ -303,7 +303,7 @@ class _DashboardState extends State<Dashboard> {
                   height: getHeight(20),
                 ),
                 Text(
-                  "Menus",
+                  "Menu",
                   style: blacktTextStyle.copyWith(
                     fontSize: getWidth(20),
                     fontWeight: bold,
@@ -316,13 +316,13 @@ class _DashboardState extends State<Dashboard> {
                     children: [
                       menus(
                         image: "assets/icon/dashboard/Paper.svg",
-                        menuTitle: "Prosthesis\nInformation",
+                        menuTitle: "Prosthesis\nInformasi",
                         widget: const ProsthesisInfo(),
                       ),
                       const Spacer(),
                       menus(
                         image: "assets/icon/dashboard/Calling.svg",
-                        menuTitle: "Providers",
+                        menuTitle: "Penyedia",
                         widget: const Providers(),
                       ),
                       const Spacer(),
@@ -334,7 +334,7 @@ class _DashboardState extends State<Dashboard> {
                       const Spacer(),
                       menus(
                         image: "assets/icon/dashboard/Edit.svg",
-                        menuTitle: "My Story",
+                        menuTitle: "Ceritaku",
                         widget: const Rehabilitation(),
                       ),
                     ],
@@ -346,7 +346,7 @@ class _DashboardState extends State<Dashboard> {
                 Row(
                   children: [
                     Text(
-                      "Articles",
+                      "Artikel",
                       style: blacktTextStyle.copyWith(
                         fontSize: getWidth(20),
                         fontWeight: bold,
@@ -358,7 +358,7 @@ class _DashboardState extends State<Dashboard> {
                         Get.to(() => const Article());
                       },
                       child: Text(
-                        "See more",
+                        "Lebih banyak",
                         style: orangetTextStyle.copyWith(
                           fontSize: getWidth(14),
                           fontWeight: bold,

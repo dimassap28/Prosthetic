@@ -75,6 +75,7 @@ flutter:
     - assets/icon/sign_inup/
     - assets/icon/providers/
     - assets/icon/dashboard/
+    - assets/icon/artikel/
     - assets/icon/providers/local/
     - assets/icon/providers/inter/
     - assets/icon/welcome/

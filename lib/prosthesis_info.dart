@@ -79,7 +79,7 @@ class _ProsthesisInfoState extends State<ProsthesisInfo> {
                     ),
                     const Spacer(),
                     Text(
-                      'Prosthesis Information',
+                      'Prosthesis Informasi',
                       style: TextStyle(
                         color: const Color(0xff363C3C),
                         fontSize: getWidth(20),
@@ -90,6 +90,7 @@ class _ProsthesisInfoState extends State<ProsthesisInfo> {
                     SizedBox(
                       child: SvgPicture.asset(
                         'assets/icon/providers/filter.svg',
+                        color: whitecolor,
                         width: getWidth(25),
                         height: getHeight(25),
                       ),
@@ -108,9 +109,13 @@ class _ProsthesisInfoState extends State<ProsthesisInfo> {
                 key: Key('selected $_selectedItem'),
                 itemBuilder: (context, index) {
                   return ExpansionTile(
-                    key: Key(index.toString()), //attention
+                    key: Key(index.toString()),
+                    iconColor: orangecolor,
                     initiallyExpanded: index == _selectedItem, //attention
-                    title: Text('${info[index]['title']}'),
+                    title: Text(
+                      '${info[index]['title']}',
+                      style: TextStyle(color: blackcolor),
+                    ),
                     children: <Widget>[
                       Padding(
                           padding: const EdgeInsets.all(25.0),
@@ -125,6 +130,7 @@ class _ProsthesisInfoState extends State<ProsthesisInfo> {
                                 const Duration(milliseconds: 1500),
                             collapseOnTextTap: true,
                             expandOnTextTap: true,
+                            linkColor: orangecolor,
                           )),
                     ],
                     onExpansionChanged: (isOpen) {
