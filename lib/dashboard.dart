@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:prosthesis/article.dart';
+import 'package:prosthesis/ceritakupage.dart';
 import 'package:prosthesis/login.dart';
 import 'package:prosthesis/prosthesis_info.dart';
 import 'package:prosthesis/providers.dart';
@@ -328,14 +329,14 @@ class _DashboardState extends State<Dashboard> {
                       const Spacer(),
                       menus(
                         image: "assets/icon/dashboard/Heart.svg",
-                        menuTitle: "Prosthesis\nRehabilitation",
+                        menuTitle: "Prosthesis\nRehabilitasi",
                         widget: const Rehabilitation(),
                       ),
                       const Spacer(),
                       menus(
                         image: "assets/icon/dashboard/Edit.svg",
                         menuTitle: "Ceritaku",
-                        widget: const Rehabilitation(),
+                        widget: const CeritakuPage(),
                       ),
                     ],
                   ),

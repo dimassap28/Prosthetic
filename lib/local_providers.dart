@@ -29,37 +29,12 @@ class LocalProviders extends StatelessWidget {
 
 List<Map<String, String>> doctor = [
   {
-    'image': 'assets/icon/providers/local/LD1.png',
-    'name': 'Dr. Suparjo',
-    'subtitle': 'subtitle',
-    'special': 'Top Speciality Extrimity',
-    'loc': 'Mojoroto (1.2 km)',
+    'image': 'assets/icon/providers/local/new1.png',
+    'name': '2 Row Finger Prosthetic',
+    'subtitle': 'Solid Standard UV DLP resin',
+    'special': 'For 2 row finger amputee',
     'icon': 'assets/icon/providers/right1.svg',
   },
-  {
-    'image': 'assets/icon/providers/local/LD2.png',
-    'name': 'Dr. Ammar',
-    'subtitle': 'subtitle',
-    'special': 'Bottom Speciality Extrimity',
-    'loc': 'Gambiran (3.2 km)',
-    'icon': 'assets/icon/providers/right1.svg',
-  },
-  {
-    'image': 'assets/icon/providers/local/LD3.png',
-    'name': 'Dr. Nathalia',
-    'subtitle': 'subtitle',
-    'special': 'Top & Bottom Extrimity',
-    'loc': 'Kilisuci (4.2 km)',
-    'icon': 'assets/icon/providers/right1.svg',
-  },
-  {
-    'image': 'assets/icon/providers/local/LD4.png',
-    'name': 'Dr. Joya',
-    'subtitle': 'subtitle',
-    'special': 'Bottom Speciality Extrimity',
-    'loc': 'Bhayangkara (5.2 km)',
-    'icon': 'assets/icon/providers/right1.svg',
-  }
 ];
 
 class LocalProvider extends StatefulWidget {
@@ -94,7 +69,7 @@ class _LocalProviderState extends State<LocalProvider> {
                         Container(
                           padding: EdgeInsets.only(bottom: getHeight(20)),
                           child: Container(
-                            width: getWidth(360),
+                            width: double.infinity,
                             height: getHeight(110),
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(20),
@@ -102,59 +77,60 @@ class _LocalProviderState extends State<LocalProvider> {
                             ),
                             child: Row(
                               children: [
-                                SizedBox(
-                                  width: getWidth(110),
-                                  height: getHeight(110),
-                                  child: Image(
-                                    image: AssetImage(
-                                      '${doctor[index]['image']}',
+                                Container(
+                                  decoration: BoxDecoration(
+                                      color: orangecolor,
+                                      borderRadius: BorderRadius.circular(20)),
+                                  child: ClipRRect(
+                                    borderRadius: BorderRadius.circular(20),
+                                    child: Image(
+                                      height: getHeight(110),
+                                      width: getWidth(110),
+                                      image: AssetImage(
+                                          '${doctor[index]['image']}'),
                                     ),
                                   ),
                                 ),
                                 SizedBox(
                                   width: getWidth(15),
                                 ),
-                                Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceEvenly,
-                                  children: [
-                                    const Spacer(),
-                                    Text(
-                                      '${doctor[index]['name']}',
-                                      style: TextStyle(
-                                        fontSize: getWidth(23),
-                                        fontWeight: FontWeight.w700,
+                                Expanded(
+                                  child: Column(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Text(
+                                        '${doctor[index]['name']}',
+                                        overflow: TextOverflow.ellipsis,
+                                        style: TextStyle(
+                                          fontSize: getWidth(20),
+                                          fontWeight: FontWeight.w700,
+                                        ),
                                       ),
-                                    ),
-                                    SizedBox(
-                                      height: getHeight(2),
-                                    ),
-                                    Text(
-                                      '${doctor[index]['subtitle']}',
-                                      style: TextStyle(fontSize: getWidth(12)),
-                                    ),
-                                    SizedBox(
-                                      height: getHeight(2),
-                                    ),
-                                    Text(
-                                      '${doctor[index]['special']}',
-                                      style: TextStyle(
-                                        fontWeight: FontWeight.w600,
-                                        fontSize: getWidth(12),
+                                      SizedBox(
+                                        height: getHeight(2),
                                       ),
-                                    ),
-                                    SizedBox(
-                                      height: getHeight(2),
-                                    ),
-                                    Text(
-                                      '${doctor[index]['loc']}',
-                                      style: TextStyle(fontSize: getWidth(12)),
-                                    ),
-                                    const Spacer(),
-                                  ],
+                                      Text(
+                                        '${doctor[index]['subtitle']}',
+                                        overflow: TextOverflow.ellipsis,
+                                        style:
+                                            TextStyle(fontSize: getWidth(12)),
+                                      ),
+                                      SizedBox(
+                                        height: getHeight(2),
+                                      ),
+                                      Text(
+                                        '${doctor[index]['special']}',
+                                        overflow: TextOverflow.ellipsis,
+                                        style: TextStyle(
+                                          fontWeight: FontWeight.w600,
+                                          fontSize: getWidth(12),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
                                 ),
-                                const Spacer(),
                                 Padding(
                                   padding: EdgeInsets.only(right: getWidth(20)),
                                   child: Container(
