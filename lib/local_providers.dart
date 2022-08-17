@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:prosthesis/localdetail.dart';
 import 'package:prosthesis/theme.dart';
 import 'package:sizer/sizer.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -66,93 +68,101 @@ class _LocalProviderState extends State<LocalProvider> {
                     padding: EdgeInsets.symmetric(horizontal: getWidth(20)),
                     child: Column(
                       children: [
-                        Container(
-                          padding: EdgeInsets.only(bottom: getHeight(20)),
+                        InkWell(
+                          onTap: () {
+                            Get.to(() => const LocalDetail());
+                          },
                           child: Container(
-                            width: double.infinity,
-                            height: getHeight(110),
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(20),
-                              color: const Color(0xffD9D9D9).withOpacity(0.2),
-                            ),
-                            child: Row(
-                              children: [
-                                Container(
-                                  decoration: BoxDecoration(
-                                      color: orangecolor,
-                                      borderRadius: BorderRadius.circular(20)),
-                                  child: ClipRRect(
-                                    borderRadius: BorderRadius.circular(20),
-                                    child: Image(
-                                      height: getHeight(110),
-                                      width: getWidth(110),
-                                      image: AssetImage(
-                                          '${doctor[index]['image']}'),
-                                    ),
-                                  ),
-                                ),
-                                SizedBox(
-                                  width: getWidth(15),
-                                ),
-                                Expanded(
-                                  child: Column(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      Text(
-                                        '${doctor[index]['name']}',
-                                        overflow: TextOverflow.ellipsis,
-                                        style: TextStyle(
-                                          fontSize: getWidth(20),
-                                          fontWeight: FontWeight.w700,
-                                        ),
-                                      ),
-                                      SizedBox(
-                                        height: getHeight(2),
-                                      ),
-                                      Text(
-                                        '${doctor[index]['subtitle']}',
-                                        overflow: TextOverflow.ellipsis,
-                                        style:
-                                            TextStyle(fontSize: getWidth(12)),
-                                      ),
-                                      SizedBox(
-                                        height: getHeight(2),
-                                      ),
-                                      Text(
-                                        '${doctor[index]['special']}',
-                                        overflow: TextOverflow.ellipsis,
-                                        style: TextStyle(
-                                          fontWeight: FontWeight.w600,
-                                          fontSize: getWidth(12),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                                Padding(
-                                  padding: EdgeInsets.only(right: getWidth(20)),
-                                  child: Container(
-                                    width: getWidth(40),
-                                    height: getHeight(40),
+                            padding: EdgeInsets.only(bottom: getHeight(20)),
+                            child: Container(
+                              width: double.infinity,
+                              height: getHeight(110),
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(20),
+                                color: const Color(0xffD9D9D9).withOpacity(0.2),
+                              ),
+                              child: Row(
+                                children: [
+                                  Container(
                                     decoration: BoxDecoration(
-                                      border: Border.all(
-                                        color: const Color(0xffDDDDDD),
-                                      ),
-                                      borderRadius: BorderRadius.circular(
-                                        8,
-                                      ),
-                                    ),
-                                    child: Container(
-                                      padding: const EdgeInsets.all(8),
-                                      child: SvgPicture.asset(
-                                        '${doctor[index]['icon']}',
+                                        color: orangecolor,
+                                        borderRadius:
+                                            BorderRadius.circular(20)),
+                                    child: ClipRRect(
+                                      borderRadius: BorderRadius.circular(20),
+                                      child: Image(
+                                        height: getHeight(110),
+                                        width: getWidth(110),
+                                        image: AssetImage(
+                                            '${doctor[index]['image']}'),
                                       ),
                                     ),
                                   ),
-                                )
-                              ],
+                                  SizedBox(
+                                    width: getWidth(15),
+                                  ),
+                                  Expanded(
+                                    child: Column(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Text(
+                                          '${doctor[index]['name']}',
+                                          overflow: TextOverflow.ellipsis,
+                                          style: TextStyle(
+                                            fontSize: getWidth(20),
+                                            fontWeight: FontWeight.w700,
+                                          ),
+                                        ),
+                                        SizedBox(
+                                          height: getHeight(2),
+                                        ),
+                                        Text(
+                                          '${doctor[index]['subtitle']}',
+                                          overflow: TextOverflow.ellipsis,
+                                          style:
+                                              TextStyle(fontSize: getWidth(12)),
+                                        ),
+                                        SizedBox(
+                                          height: getHeight(2),
+                                        ),
+                                        Text(
+                                          '${doctor[index]['special']}',
+                                          overflow: TextOverflow.ellipsis,
+                                          style: TextStyle(
+                                            fontWeight: FontWeight.w600,
+                                            fontSize: getWidth(12),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding:
+                                        EdgeInsets.only(right: getWidth(20)),
+                                    child: Container(
+                                      width: getWidth(40),
+                                      height: getHeight(40),
+                                      decoration: BoxDecoration(
+                                        border: Border.all(
+                                          color: const Color(0xffDDDDDD),
+                                        ),
+                                        borderRadius: BorderRadius.circular(
+                                          8,
+                                        ),
+                                      ),
+                                      child: Container(
+                                        padding: const EdgeInsets.all(8),
+                                        child: SvgPicture.asset(
+                                          '${doctor[index]['icon']}',
+                                        ),
+                                      ),
+                                    ),
+                                  )
+                                ],
+                              ),
                             ),
                           ),
                         ),

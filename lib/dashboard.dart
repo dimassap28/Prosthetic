@@ -3,8 +3,10 @@ import 'package:get/get.dart';
 import 'package:prosthesis/article.dart';
 import 'package:prosthesis/ceritakupage.dart';
 import 'package:prosthesis/login.dart';
+import 'package:prosthesis/note.dart';
 import 'package:prosthesis/prosthesis_info.dart';
 import 'package:prosthesis/providers.dart';
+import 'package:prosthesis/readarticle.dart';
 import 'package:prosthesis/rehabilitation.dart';
 import 'package:prosthesis/theme.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -17,28 +19,21 @@ void main() {
   );
 }
 
-List<Map<String, String>> _article = [
-  {
-    'image': 'assets/icon/dashboard/artikel.png',
-    'title': 'Kaki Palsu Prostetik',
-    'subtitle': 'lorem ipsum dolor sit',
-  },
-  {
-    'image': 'assets/icon/dashboard/artikel1.png',
-    'title': 'Manfaat Kaki Palsu',
-    'subtitle': 'lorem ipsum dolor sit',
-  },
-  {
-    'image': 'assets/icon/dashboard/artikel1.png',
-    'title': 'Manfaat Kaki Palsu',
-    'subtitle': 'lorem ipsum dolor sit',
-  },
-  {
-    'image': 'assets/icon/dashboard/artikel1.png',
-    'title': 'Manfaat Kaki Palsu',
-    'subtitle': 'lorem ipsum dolor sit',
-  },
-];
+// List<Map<String, String>> _article = [
+//   {
+//     'image': 'assets/icon/artikel/p1.jpg',
+//     'title': 'Edukasi: Apa Itu Prostesis',
+//     'subtitle': 'Prostesis',
+//   },
+//   {
+//     'image': 'assets/icon/artikel/p1.jpg',
+//     'title': 'Wajarkah Otot Mengecil Setelah Memakai Kaki Palsu (PROSTESIS)?',
+//     'subtitle': 'Prostesis',
+//   },
+// ];
+
+final now = DateTime.now();
+String formatter = DateFormat.yMMMMd().format(now);
 
 class Dashboard extends StatefulWidget {
   const Dashboard({Key? key}) : super(key: key);
@@ -57,19 +52,19 @@ class _DashboardState extends State<Dashboard> {
     SizedBox(
       height: getHeight(200),
       child: Image.asset(
-        "assets/icon/dashboard/slider1.png",
+        "assets/icon/dashboard/slider1.jpg",
       ),
     ),
     SizedBox(
       height: getHeight(200),
       child: Image.asset(
-        "assets/icon/dashboard/slider1.png",
+        "assets/icon/dashboard/slider2.jpg",
       ),
     ),
     SizedBox(
       height: getHeight(200),
       child: Image.asset(
-        "assets/icon/dashboard/slider1.png",
+        "assets/icon/dashboard/slider3.jpg",
       ),
     ),
   ];
@@ -119,43 +114,30 @@ class _DashboardState extends State<Dashboard> {
     );
   }
 
-  Widget article({
-    required String image,
-    required String title,
-    required String subtitle,
-  }) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Center(
-          child: Image.asset(
-            image,
-            width: getWidth(156),
-            fit: BoxFit.fitHeight,
-          ),
-        ),
-        SizedBox(
-          height: getHeight(5),
-        ),
-        Text(
-          title,
-          maxLines: 1,
-          overflow: TextOverflow.ellipsis,
-          style: blacktTextStyle.copyWith(
-            fontSize: getWidth(18),
-            fontWeight: bold,
-          ),
-        ),
-        Text(
-          subtitle,
-          style: blacktTextStyle.copyWith(
-            fontSize: getWidth(14),
-            fontWeight: normal,
-          ),
-        ),
-      ],
-    );
-  }
+  final List<Note> _article = [
+    Note(
+        title: 'Edukasi: Apa Itu Prostesis',
+        tgl: formatter,
+        image: 'assets/icon/artikel/p1.jpg',
+        creditimage: 'credit, Westend61 via Getty Images',
+        heading1: 'Apa itu Prosthesis?\n',
+        heading2: 'Cara Kerja Dan Fungsi Prostesis\n',
+        creditartikel: 'Sumber: Hellosehat 2021',
+        content1: content1,
+        content2: content2,
+        subtitle: 'Prosthesis'),
+    Note(
+        title: 'Wajarkah Otot Mengecil Setelah Memakai Kaki Palsu (PROSTESIS)?',
+        tgl: formatter,
+        image: 'assets/icon/artikel/p2.jpg',
+        creditimage: 'credit, iStock Photo',
+        heading1: '',
+        heading2: '',
+        creditartikel: 'Sumber: Hellosehat 2021',
+        content1: artikelcontent,
+        content2: '',
+        subtitle: 'Prosthesis'),
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -216,22 +198,28 @@ class _DashboardState extends State<Dashboard> {
                 SizedBox(
                   height: getHeight(20),
                 ),
-                CarouselSlider(
-                  items: slider,
-                  carouselController: _controller,
-                  options: CarouselOptions(
-                    autoPlay: true,
-                    enlargeCenterPage: true,
-                    viewportFraction: 1,
-                    aspectRatio: 2.0,
-                    onPageChanged: (index, reason) {
-                      setState(
-                        () {
-                          _current = index;
-                        },
-                      );
-                    },
+                ClipRRect(
+                  borderRadius: BorderRadius.circular(20),
+                  child: CarouselSlider(
+                    items: slider,
+                    carouselController: _controller,
+                    options: CarouselOptions(
+                      autoPlay: true,
+                      enlargeCenterPage: true,
+                      viewportFraction: 1,
+                      height: getHeight(187),
+                      onPageChanged: (index, reason) {
+                        setState(
+                          () {
+                            _current = index;
+                          },
+                        );
+                      },
+                    ),
                   ),
+                ),
+                SizedBox(
+                  height: getHeight(3),
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -246,7 +234,7 @@ class _DashboardState extends State<Dashboard> {
                               vertical: getHeight(8), horizontal: getWidth(4)),
                           decoration: BoxDecoration(
                             shape: BoxShape.rectangle,
-                            borderRadius: BorderRadius.circular(2),
+                            borderRadius: BorderRadius.circular(8),
                             color: (Theme.of(context).brightness ==
                                         Brightness.dark
                                     ? whitecolor
@@ -259,7 +247,7 @@ class _DashboardState extends State<Dashboard> {
                   ).toList(),
                 ),
                 SizedBox(
-                  height: getHeight(16),
+                  height: getHeight(13),
                 ),
                 Container(
                   padding: EdgeInsets.symmetric(horizontal: getWidth(5)),
@@ -388,10 +376,56 @@ class _DashboardState extends State<Dashboard> {
                         ),
                         child: Row(
                           children: [
-                            article(
-                              image: "${_article[index]['image']}",
-                              title: "${_article[index]['title']}",
-                              subtitle: "${_article[index]['subtitle']}",
+                            InkWell(
+                              onTap: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => const ReadArticle(),
+                                    settings: RouteSettings(
+                                        arguments: _article[index]),
+                                  ),
+                                );
+                              },
+                              child: SizedBox(
+                                width: getWidth(200),
+                                height: getHeight(180),
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Center(
+                                      child: ClipRRect(
+                                        borderRadius: BorderRadius.circular(15),
+                                        child: Image.asset(
+                                          _article[index].image,
+                                          width: getWidth(200),
+                                          height: getHeight(130),
+                                          fit: BoxFit.fitHeight,
+                                        ),
+                                      ),
+                                    ),
+                                    SizedBox(
+                                      height: getHeight(5),
+                                    ),
+                                    Text(
+                                      _article[index].title,
+                                      maxLines: 1,
+                                      overflow: TextOverflow.ellipsis,
+                                      style: blacktTextStyle.copyWith(
+                                        fontSize: getWidth(18),
+                                        fontWeight: bold,
+                                      ),
+                                    ),
+                                    Text(
+                                      _article[index].subtitle,
+                                      style: TextStyle(
+                                        fontWeight: light,
+                                        fontSize: getWidth(15),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
                             ),
                           ],
                         ),
