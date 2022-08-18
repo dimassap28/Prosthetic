@@ -7,7 +7,7 @@ import 'package:prosthesis/note.dart';
 import 'package:prosthesis/prosthesis_info.dart';
 import 'package:prosthesis/providers.dart';
 import 'package:prosthesis/readarticle.dart';
-import 'package:prosthesis/rehabilitation.dart';
+import 'package:prosthesis/rehabilitasi.dart';
 import 'package:prosthesis/theme.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:intl/intl.dart';
@@ -51,20 +51,29 @@ class _DashboardState extends State<Dashboard> {
   List<Widget> slider = [
     SizedBox(
       height: getHeight(200),
-      child: Image.asset(
-        "assets/icon/dashboard/slider1.jpg",
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(20),
+        child: Image.asset(
+          "assets/icon/dashboard/slider4.jpg",
+        ),
       ),
     ),
     SizedBox(
       height: getHeight(200),
-      child: Image.asset(
-        "assets/icon/dashboard/slider2.jpg",
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(20),
+        child: Image.asset(
+          "assets/icon/dashboard/slider5.jpg",
+        ),
       ),
     ),
     SizedBox(
       height: getHeight(200),
-      child: Image.asset(
-        "assets/icon/dashboard/slider3.jpg",
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(20),
+        child: Image.asset(
+          "assets/icon/dashboard/slider6.jpg",
+        ),
       ),
     ),
   ];
@@ -198,24 +207,21 @@ class _DashboardState extends State<Dashboard> {
                 SizedBox(
                   height: getHeight(20),
                 ),
-                ClipRRect(
-                  borderRadius: BorderRadius.circular(20),
-                  child: CarouselSlider(
-                    items: slider,
-                    carouselController: _controller,
-                    options: CarouselOptions(
-                      autoPlay: true,
-                      enlargeCenterPage: true,
-                      viewportFraction: 1,
-                      height: getHeight(187),
-                      onPageChanged: (index, reason) {
-                        setState(
-                          () {
-                            _current = index;
-                          },
-                        );
-                      },
-                    ),
+                CarouselSlider(
+                  items: slider,
+                  carouselController: _controller,
+                  options: CarouselOptions(
+                    autoPlay: true,
+                    enlargeCenterPage: true,
+                    viewportFraction: 1,
+                    height: getHeight(187),
+                    onPageChanged: (index, reason) {
+                      setState(
+                        () {
+                          _current = index;
+                        },
+                      );
+                    },
                   ),
                 ),
                 SizedBox(
@@ -318,7 +324,7 @@ class _DashboardState extends State<Dashboard> {
                       menus(
                         image: "assets/icon/dashboard/Heart.svg",
                         menuTitle: "Prosthesis\nRehabilitasi",
-                        widget: const Rehabilitation(),
+                        widget: const Rehabilitasi(),
                       ),
                       const Spacer(),
                       menus(
@@ -378,6 +384,8 @@ class _DashboardState extends State<Dashboard> {
                           children: [
                             InkWell(
                               onTap: () {
+                                // Get.to(Builder(
+                                //     builder: (context) => const ReadArticle()));
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(

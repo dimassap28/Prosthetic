@@ -6,8 +6,6 @@ import 'package:prosthesis/local_providers.dart';
 
 import 'package:prosthesis/theme.dart';
 
-import 'dashboard.dart';
-
 void main() {
   runApp(const Providers());
 }
@@ -40,7 +38,7 @@ class _StackOverState extends State<Providers>
               children: [
                 InkWell(
                   onTap: () {
-                    Get.to(() => const Dashboard());
+                    Get.back();
                   },
                   child: SizedBox(
                     child: SvgPicture.asset(

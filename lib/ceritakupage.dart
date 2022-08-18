@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
-import 'package:prosthesis/dashboard.dart';
 import 'package:prosthesis/login.dart';
 import 'package:prosthesis/theme.dart';
 
@@ -34,7 +33,7 @@ class CeritakuPage extends StatelessWidget {
                 children: [
                   InkWell(
                     onTap: () {
-                      Get.to(() => const Dashboard());
+                      Get.back();
                     },
                     child: SizedBox(
                       child: SvgPicture.asset(
@@ -69,36 +68,23 @@ class CeritakuPage extends StatelessWidget {
               ),
               Row(
                 children: [
-                  Image.asset(
-                    "assets/icon/dashboard/profile1.png",
-                    height: getHeight(40),
-                    fit: BoxFit.cover,
+                  Icon(
+                    Icons.person_rounded,
+                    color: orangecolor,
                   ),
                   SizedBox(
                     width: getWidth(10),
                   ),
                   Text(
-                    'Nama kamu',
+                    'Laki-laki, 46 tahun, Surabaya',
                     style: TextStyle(fontSize: getWidth(15), fontWeight: bold),
                   ),
                   SizedBox(
                     width: getWidth(8),
                   ),
-                  Container(
-                    height: getHeight(5),
-                    width: getWidth(5),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(20),
-                      color: blackcolor.withOpacity(0.3),
-                    ),
-                  ),
                   SizedBox(
                     width: getWidth(8),
                   ),
-                  Text(formatter + ' jam lalu',
-                      style: TextStyle(
-                        fontSize: getWidth(15),
-                      )),
                 ],
               ),
               Padding(
@@ -106,16 +92,11 @@ class CeritakuPage extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
-                      'Ini Judul',
-                      style:
-                          TextStyle(fontSize: getWidth(18), fontWeight: bold),
-                    ),
                     SizedBox(
                       height: getHeight(3),
                     ),
                     const Text(
-                      'Hari ini aku merasa sehat dan alhamdulillah aku masih bisa bersyukur. bisa menikmati hari esok untuk kesekian kalinya setelah aku diberi anugerah untuk menerima ke istimewaan dari tuhan berupa kaki sambung (prosthesis). semoga kita selalu menerima apa yang tuhan berikan dan tidak pernah mengeluh akan apa yang tuhan berikan',
+                      'Saya mengalami patah tulang kaki kanan pada tahun 2020 karena kecelakaan sepeda motor. Saya mendapatkan kaki palsu dengan bantuan aplikasi ProsteticGo yang direkomendasikan oleh saudara saya. Aplikasi ini sangat membantu saya dari proses pengenalan mengenai kaki palsu, dimana saya bisa membelinya, dan bagaimana membiasakan diri saya sehingga sekarang saya sudah bisa berjalan seperti dulu lagi.',
                     ),
                   ],
                 ),
@@ -129,36 +110,23 @@ class CeritakuPage extends StatelessWidget {
               ),
               Row(
                 children: [
-                  Image.asset(
-                    "assets/icon/dashboard/profile1.png",
-                    height: getHeight(40),
-                    fit: BoxFit.cover,
+                  Icon(
+                    Icons.person_rounded,
+                    color: orangecolor,
                   ),
                   SizedBox(
                     width: getWidth(10),
                   ),
                   Text(
-                    'Nama kamu',
+                    'Perempuan, 55 tahun, Malang',
                     style: TextStyle(fontSize: getWidth(15), fontWeight: bold),
                   ),
                   SizedBox(
                     width: getWidth(8),
                   ),
-                  Container(
-                    height: getHeight(5),
-                    width: getWidth(5),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(20),
-                      color: blackcolor.withOpacity(0.3),
-                    ),
-                  ),
                   SizedBox(
                     width: getWidth(8),
                   ),
-                  Text(formatter + ' jam lalu',
-                      style: TextStyle(
-                        fontSize: getWidth(15),
-                      )),
                 ],
               ),
               Padding(
@@ -166,16 +134,11 @@ class CeritakuPage extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
-                      'Ini Judul',
-                      style:
-                          TextStyle(fontSize: getWidth(18), fontWeight: bold),
-                    ),
                     SizedBox(
                       height: getHeight(3),
                     ),
                     const Text(
-                      'Hari ini aku merasa sehat dan alhamdulillah aku masih bisa bersyukur. bisa menikmati hari esok untuk kesekian kalinya setelah aku diberi anugerah untuk menerima ke istimewaan dari tuhan berupa kaki sambung (prosthesis). semoga kita selalu menerima apa yang tuhan berikan dan tidak pernah mengeluh akan apa yang tuhan berikan',
+                      'Pada tahun 2019 saya mengalami patah tulang kaki kiri karena terjatuh dari tangga. Setelah itu saya sempat putus asa karena kaki saya tidak bisa kembali seperti sedia kala. Lalu ada teman yang memberitahu mengenai aplikasi ProsteticGo. Berkat aplikasi ini saya bisa tahu mengenai kaki palsu, dimana saya bisa pesan dan bagaimana prosesnya dari awal hingga akhir. Sekarang sudah 2 tahun saya menggunakan kaki palsu dan saya sangat senang karena sudah dapat beraktivitas seperti biasanya lagi.',
                     ),
                   ],
                 ),

@@ -40,9 +40,7 @@ class _LoginState extends State<Login> {
                       leading: IconButton(
                         icon: const Icon(Icons.arrow_back_ios_new_rounded),
                         onPressed: () {
-                          Get.to(
-                            () => const Dashboard(),
-                          );
+                          Get.back();
                         },
                       ),
                     ),

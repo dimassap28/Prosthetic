@@ -32,8 +32,8 @@ class LocalProviders extends StatelessWidget {
 List<Map<String, String>> doctor = [
   {
     'image': 'assets/icon/providers/local/new1.png',
-    'name': '2 Row Finger Prosthetic',
-    'subtitle': 'Solid Standard UV DLP resin',
+    'name': 'iDIG',
+    'subtitle': '+62 812-3203-422',
     'special': 'For 2 row finger amputee',
     'icon': 'assets/icon/providers/right1.svg',
   },

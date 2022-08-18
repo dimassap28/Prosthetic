@@ -10,23 +10,23 @@ void main() {
 
 List<Map<String, String>> info = [
   {
-    'title': 'History of Phrosthesis',
+    'title': 'Sejarah Prostesis',
     'content':
         'Dikenal sejak era kerajaan Mesir, bidang Prostetik telah berubah menjadi contoh bagaimana determinasi manusia untuk menjadi lebih baik. Sejarah evolusi dari prostetik merupakan sangatlah panjang, dari bentuk awal yang primitif hingga bentuk masa kini yang canggih.'
             '\n\nTeknologi Prostesis tertua di dunia ditenukan di kota Thebes, Mesir pada tahun 2000. Jari jempol palsu ditemukan di mummy yang diduga dibuat pada tahun 1069 hingga 664 SM. Kaki palsu bersejarah lainnya yang diduga dibuar pada sekitar 300 SM ditemukan di Capua, Itali, pada tahun 1858. Kaki palsu ini dibuat menggunakan besi dan perunggu dengan inti dari kayu, diduga untuk pasien amputasi bawah lutut.'
   },
   {
-    'title': 'Ambrosius Paré Book About Prosthesis',
+    'title': 'Buku Ambrosius Paré Tentang Prostesis',
     'content':
         'Ambroise Paré dianggap sebagai bapak operasi amputasi dan prosthesis modern di pertengahan hingga akhir tahun 1500. Beliau adalah seorang dokter bedah tentara Perancis yang juga merupakan seorang potong rambut. Ambroise memperkenalkan prosedur amputasi modern pada tahun 1529 dan membuat prosthesis untuk ekstremitas atas dan bawah di tahun 1536. Beliau juga menemukan prosthesis diatas lutut berupa tungkai yang bisa ditekuk dan prosthesis kaki yang posisinya terfiksasi, tali pengekekang yang bisa diatur dan fitur-fitur mekanik yang digunakan pada peralatan modern saat ini. Semua karyanya mencerminkan bagaimana cara kerja prosthesis yang sesungguhnya.',
   },
   {
-    'title': 'Modern Prosthesis',
+    'title': 'Prostesis Modern',
     'content':
         'Beralih ke era modern seiring berlangsungnya perang saudara Amerika Serikat, jumlah kasus amputasi meningkat drastis. James Hanger, salah satu korban amputasi pertama pada perang saudara mengembangkan apa yang kemudian dinamakan "Hanger Limb". Orang-orang seperti Hanger, Selpho, Palmer, dan A. A. Marks membantu mengembangankan dan memajukan bidang prosthesis dalam hal mekanisme dan bahan.',
   },
   {
-    'title': 'Prosthesis In Indonesia',
+    'title': 'Prostesis di Indonesia',
     'content': 'Pada Tahun 1946 bersama Suroto Reksopranoto pertama kali membuat alat bantu Ortotik dan Prostetik yang sangat sederhana (dari bambu) yang merupakan cikal bakal / perintisan bengkel Protese di Indonesia yang kemudian berkembang menjadi training center.'
         '\n\nProf.DR.R.Soeharso merintis dari tahun Th 1946 s/d 1971. Sejarah berdirinya LOP tidak lepas dari sejarah perjalanan Rehabilitasi Centrum (RC) karena merupakan bagian dari pelayanan RC yang dimotori oleh Prof.DR.R.Soeharso. Perkembangan berikutnya LOP berubah nama menjadi RS Orthopaedi dan Prothese dan berubah lagi menjadi RS Ortopedi Prof.DR.R.Soeharso Surakarta.'
         '\n\nRC saat itu hanya Lembaga Pusat Rehabilitasi Penderita cacat Tubuh (LPRPCT) kemudian baru dibuka Lembaga Orthopaedi dan Prothese (LOP) dan berikutnya dikuti dengan Akademi maupun lembaga / yayasan dibawah naungan nama Prof.Dr.R. Soeharso yang akhirnya tergabung dalam “Paguyuban Lembaga Rehabilitasi Prof.DR.R.Soeharso Surakarta” yang berjumlah 10 sbb :'
@@ -122,15 +122,15 @@ class _ProsthesisInfoState extends State<ProsthesisInfo> {
                           child: ExpandableText(
                             '${info[index]['content']}',
                             textAlign: TextAlign.justify,
-                            expandText: 'Read More',
-                            collapseText: 'Read Less',
+                            expandText: 'Tampilkan',
+                            collapseText: 'Sembunyikan',
                             maxLines: 4,
                             animation: true,
                             animationDuration:
                                 const Duration(milliseconds: 1500),
                             collapseOnTextTap: true,
                             expandOnTextTap: true,
-                            linkColor: orangecolor,
+                            linkColor: orangecolorbut,
                           )),
                     ],
                     onExpansionChanged: (isOpen) {

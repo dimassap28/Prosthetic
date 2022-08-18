@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
-import 'package:prosthesis/providers.dart';
 import 'package:prosthesis/theme.dart';
+import 'package:url_launcher/url_launcher_string.dart';
 
 void main() {
   runApp(const LocalDetail(
@@ -28,7 +28,7 @@ class LocalDetail extends StatelessWidget {
               children: [
                 InkWell(
                   onTap: () {
-                    Get.to(() => const Providers());
+                    Get.back();
                   },
                   child: SizedBox(
                     child: SvgPicture.asset(
@@ -40,7 +40,7 @@ class LocalDetail extends StatelessWidget {
                 ),
                 const Spacer(),
                 Text(
-                  'Prostesis Jari 2 Ruas',
+                  'Prostesis Jari 2 Ruas by iDIG',
                   style: TextStyle(
                     color: const Color(0xff363C3C),
                     fontSize: getWidth(20),
@@ -137,6 +137,27 @@ class LocalDetail extends StatelessWidget {
                   ],
                 ),
               ],
+            ),
+            SizedBox(
+              height: getHeight(20),
+            ), //
+            InkWell(
+              onTap: () => launchUrlString(
+                "whatsapp://send?phone=+628123203422&Text=iDIG",
+              ),
+              child: Container(
+                decoration: BoxDecoration(
+                    color: orangecolor,
+                    borderRadius: BorderRadius.circular(20)),
+                width: double.infinity,
+                height: getHeight(50),
+                child: Center(
+                  child: Text(
+                    'Hubungi',
+                    style: TextStyle(fontWeight: bold, color: whitecolor),
+                  ),
+                ),
+              ),
             )
           ],
         ),

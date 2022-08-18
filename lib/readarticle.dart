@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
-import 'package:prosthesis/article.dart';
 import 'package:prosthesis/note.dart';
 import 'package:prosthesis/theme.dart';
 
@@ -33,7 +32,7 @@ class ReadArticle extends StatelessWidget {
                 Row(mainAxisAlignment: MainAxisAlignment.start, children: [
                   InkWell(
                     onTap: () {
-                      Get.to(() => const Article());
+                      Get.back();
                     },
                     child: SizedBox(
                       child: SvgPicture.asset(
@@ -62,12 +61,14 @@ class ReadArticle extends StatelessWidget {
                 SizedBox(
                   height: getHeight(10),
                 ),
-                ClipRRect(
-                  borderRadius: BorderRadius.circular(25),
-                  child: Image.asset(
-                    note.image,
-                    height: getHeight(200),
-                    width: getWidth(350),
+                SizedBox(
+                  height: getHeight(200),
+                  // width: getWidth(350),
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(25),
+                    child: Image.asset(
+                      note.image,
+                    ),
                   ),
                 ),
                 SizedBox(
